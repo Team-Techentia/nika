@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { bl1, bl2, bl3, light, mail } from "../assets";
 import { BlogCard, BreadCrumb, Signup } from "../components";
 import blog from "../utils/blog";
-import { Link } from "react-router-dom";
 
 function Blog() {
   const blogs: blog[] = [
