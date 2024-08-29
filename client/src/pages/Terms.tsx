@@ -1,11 +1,18 @@
 // import React from 'react'
 
+import { useEffect } from "react";
+
 function Terms() {
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
   return (
-    <div>
-      terms
-    </div>
-  )
+    <>
+      terms of service
+    </>
+  );
 }
 
-export default Terms
+export default Terms;

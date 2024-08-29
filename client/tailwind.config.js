@@ -18,6 +18,7 @@ export default {
     fontFamily: {
       inter: "Inter, sans-serif",
       HelveticaNeueCyr: "HelveticaNeueCyr",
+      ibm: "IBM Plex Sans, sans-serif"
     },
     colors: {
       dark100: "#070707",

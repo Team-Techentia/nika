@@ -22,4 +22,113 @@ body {
 
 .bg-hero {
   background-size: cover;
+
+}
+
+.stay-sec {
+  background-image: url('./assets/bgg1.png');
+
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.err-404 {
+  background-image: url('./assets/404.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.about-hero {
+  background-image: url('./assets/about-hero.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.waitlist-hero {
+  background-image: url('./assets/waitlist-hero.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.webapp-hero {
+  background-image: url('./assets/webapp-hero.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.btn {
+  cursor: pointer;
+  transition: all 40ms;
+
+}
+
+.btn1 {
+  background-color: #5a40fe;
+  color: white;
+}
+
+.btn2 {
+  background-color: white;
+  color: #5a40fe;
+  border: 1px solid #5a40fe;
+}
+
+.btn1:hover {
+  background-color: white;
+  color: #5a40fe;
+  border: 1px solid #5a40fe;
+}
+
+.btn2:hover {
+  background-color: #5a40fe;
+  color: white;
+}
+
+.btn3 {
+  background-color: #070707;
+  color: white;
+
+}
+
+.btn3:hover {
+  background-color: white;
+  color: #070707;
+  border: 1px solid #070707;
+}
+
+.btn4 {
+  background-color: #5a40fe;
+  color: white;
+}
+
+.btn4:hover {
+  background-color: white;
+  color: #5a40fe;
+  border: 1px solid #5a40fe;
+}
+
+@media(width<1024px) {
+  .stay-sec {
+    background-image: url('./assets/bgg2.png');
+  }
+}
+
+@media(width<780px) {
+  .about-hero {
+    background-image: url('./assets/about-hero2.png');
+  }
+
+  .waitlist-hero {
+    background-image: url('./assets/waitlist-hero2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .webapp-hero {
+    background-image: url('./assets/webapp-hero2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+
 }

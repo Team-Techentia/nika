@@ -1,7 +1,7 @@
 // import React from 'react'
 
 import { Link } from "react-router-dom";
-import { logo } from "../../assets";
+import { insta, logo, twitter, youtube } from "../../assets";
 
 function Footer() {
   return (
@@ -25,31 +25,32 @@ function Footer() {
                 </div>
               </div>
 
-              <div className="">
+              <form method="POST" className="">
                 <div className="flex lg:flex-row flex-col gap-1.5">
                   <input
                     className="h-[38px] w-[100%] pl-3 py-3 text-base font-normal font-['Inter'] leading-tight bg-white/20 rounded-md justify-start items-center gap-2.5 inline-flex text-[rgba(255,255,255,.72)]"
                     placeholder="Email address"
                   />
-                  <button className="h-9 lg:w-[156px] w-[100%] px-4 py-3 bg-[#5a40fe] rounded-md shadow justify-center items-center gap-2.5 inline-flex">
-                    <div className="text-white text-base font-medium font-['Inter'] leading-tight">
-                      {" "}
-                      Try it out
-                    </div>
+                  <button className="h-9 lg:w-[156px] btn btn4 w-[100%] px-4 py-3 text-base font-medium font-['Inter'] leading-tight rounded-md shadow justify-center items-center gap-2.5 inline-flex">
+                    Try it out
                   </button>
                 </div>
                 <div className="h-[17px] mt-2 justify-start items-center gap-2 inline-flex">
                   <input
                     type="checkbox"
+                    id="check"
                     className="w-4 h-4 relative bg-white rounded-[3px] shadow"
                   />
-                  <div className="text-white text-xs font-light font-['Inter'] leading-none">
+                  <label
+                    htmlFor="check"
+                    className="text-white text-xs font-light font-['Inter'] leading-none"
+                  >
                     I agree to receive marketing emails from Nika
-                  </div>
+                  </label>
                 </div>
-              </div>
+              </form>
             </div>
-            <div className="pt-5 pb-[30px] grid sm:grid-cols-4">
+            <div className="pt-5 pb-[30px] grid sm:grid-cols-4 gap-4">
               <div className="flex flex-col items-start gap-2">
                 <div className="text-white text-sm font-medium font-['Inter'] leading-[16.80px]">
                   Page
@@ -62,10 +63,48 @@ function Footer() {
                 </Link>
                 <Link
                   className="text-[rgba(255,255,255,0.56)] text-sm font-normal font-['Inter'] leading-tight"
-                  to={"/blog"}
+                  to={"/waitlist"}
                 >
-                  Blog
+                  Waitlist
                 </Link>
+              </div>
+              <div className="flex flex-col items-start gap-2">
+                <div className="text-white text-sm font-medium font-['Inter'] leading-[16.80px]">
+                  Contact Us
+                </div>
+                <p className="text-[rgba(255,255,255,0.56)] text-sm font-normal font-['Inter'] leading-tight">
+                  customerservice@nika.com
+                </p>
+                <p className="text-[rgba(255,255,255,0.56)] text-sm font-normal font-['Inter'] leading-tight">
+                  222-22-22
+                </p>
+              </div>
+              <div className="flex flex-col items-start gap-2">
+                <div className="text-white text-sm font-medium font-['Inter'] leading-[16.80px]">
+                  Help
+                </div>
+                <Link
+                  to={"/terms"}
+                  className="text-[rgba(255,255,255,0.56)] text-sm font-normal font-['Inter'] leading-tight"
+                >
+                  Terms of Service
+                </Link>
+                <Link
+                  to={"/privacy"}
+                  className="text-[rgba(255,255,255,0.56)] text-sm font-normal font-['Inter'] leading-tight"
+                >
+                  Privacy Policy
+                </Link>
+              </div>
+              <div className="flex flex-col items-start gap-2">
+                <div className="text-white text-sm font-medium font-['Inter'] leading-[16.80px]">
+                  Media
+                </div>
+                <div className="flex gap-4">
+                  <img src={twitter} alt="Twitter" />
+                  <img src={insta} alt="Instagram" />
+                  <img src={youtube} alt="Youtube" />
+                </div>
               </div>
             </div>
             <div className="h-[41px] py-3 justify-center items-center inline-flex">

@@ -1,11 +1,18 @@
 // import React from 'react'
 
+import { useEffect } from "react";
+
 function Error404() {
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
   return (
-    <div>
-      error
-    </div>
-  )
+    <>
+     error
+    </>
+  );
 }
 
-export default Error404
+export default Error404;

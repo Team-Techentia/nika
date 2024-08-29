@@ -1,11 +1,18 @@
 // import React from 'react'
 
+import { useEffect } from "react";
+
 function Waitlist() {
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
   return (
-    <div>
+    <>
       waitlist
-    </div>
-  )
+    </>
+  );
 }
 
-export default Waitlist
+export default Waitlist;

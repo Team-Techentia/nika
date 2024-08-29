@@ -1,7 +1,16 @@
 // import React from 'react'
 
+import { useEffect } from "react";
+
 function About() {
-  return <div></div>;
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  return (
+    <>
+      about
+    </>
+  );
 }
 
 export default About;
