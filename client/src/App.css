@@ -56,10 +56,16 @@ body {
   background-repeat: no-repeat;
 }
 
+.article-tech {
+  background-image: url('./assets/article-tech3.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+}
+
 .btn {
   cursor: pointer;
   transition: all 40ms;
-
 }
 
 .btn1 {
@@ -107,6 +113,47 @@ body {
   border: 1px solid #5a40fe;
 }
 
+.btn5 {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn5:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.cgrad {
+  background: url('./assets/congrats-grad.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.mob-nav {
+  position: fixed;
+  z-index: 1000;
+  background: #00000041;
+  left: 0;
+}
+
+.mob-nav-ani {
+  left: 0;
+  position: absolute;
+  animation: mob-nav 550ms forwards;
+  z-index: 1200;
+}
+
+@keyframes mob-nav {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
 @media(width<1024px) {
   .stay-sec {
     background-image: url('./assets/bgg2.png');
@@ -129,6 +176,14 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
   }
+
+  .article-tech {
+    background-image: url('./assets/article-tech.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+  }
+
 
 
 }

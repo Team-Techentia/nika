@@ -1,50 +1,26 @@
 // import React from 'react'
 import { useEffect, useState } from "react";
-import { bl1, bl2, bl3 } from "../assets";
 import { BlogCard, BreadCrumb, Signup } from "../components";
 import blog from "../utils/blog";
-
-function Article() {
-
-  const blogs: blog[] = [
-    {
-      img: bl1,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "#Investment Strategies",
-      date: "March 27, 2024",
-    },
-    {
-      img: bl2,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "#Investment Strategies",
-      date: "March 27, 2024",
-    },
-    {
-      img: bl3,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "#Investment Strategies",
-      date: "March 27, 2024",
-    },
-  ]
-
+type propType = {
+  blogs: blog[];
+};
+function Article(prop: propType) {
+  const { blogs } = prop;
   const tags: string[] = [
     "All",
     "#teg",
+    "#teg",
+    "#DeFiTutorials",
     "#DeFiTutorials",
     "#Insights",
     "#Updates",
     "#InvestmentStrategies",
   ];
-
   const [selectTag, setSelecttag] = useState("#InvestmentStrategies");
-  
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
   return (
     <>
       <BreadCrumb />

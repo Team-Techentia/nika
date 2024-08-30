@@ -1,71 +1,20 @@
 // import React from 'react'
 import { useEffect, useState } from "react";
-import { bl1, bl2, bl3, light, mail } from "../assets";
+import { light, mail } from "../assets";
 import { BlogCard, BreadCrumb, Signup } from "../components";
 import blog from "../utils/blog";
-
-function Blog() {
-  const blogs: blog[] = [
-    {
-      img: bl1,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "#Investment Strategies",
-      date: "March 27, 2024",
-    },
-    {
-      img: bl2,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "#Tag",
-      date: "March 27, 2024",
-    },
-    {
-      img: bl3,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "#Updates",
-      date: "March 27, 2024",
-    },
-    {
-      img: bl2,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "#Investment Strategies",
-      date: "March 27, 2024",
-    },
-    {
-      img: bl1,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "#DeFi Tutorials",
-      date: "March 27, 2024",
-    },
-
-    {
-      img: bl3,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "#Insights",
-      date: "March 27, 2024",
-    },
-  ];
-
-  const tags: string[] = [
-    "All",
-    "#Tag",
-    "#DeFi Tutorials",
-    "#Insights",
-    "#Updates",
-    "#Investment Strategies",
-  ];
+type propType = {
+  blogs: blog[];
+  tags: string[];
+};
+function Blog(prop: propType) {
+  const { blogs, tags } = prop;
 
   const [selectTag, setSelecttag] = useState("All");
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
+  console.log(blogs);
   return (
     <>
       <BreadCrumb />
@@ -74,14 +23,15 @@ function Blog() {
           <div className="flex gap-1 w-[100%] overflow-auto">
             {tags.map((item, ind) => (
               <p
-                className={`py-1 px-2 rounded-[34px] cursor-pointer text-xs font-inter text-center w-max ${selectTag == item
-                  ? "bg-[#5B40FF] text-white"
-                  : "bg-[rgba(91,64,255,0.08)] text-[#5B40FF]"
-                  }`}
+                className={`py-1 px-2 rounded-[34px] cursor-pointer text-xs font-inter text-center w-max ${
+                  selectTag == item
+                    ? "bg-[#5B40FF] text-white"
+                    : "bg-[rgba(91,64,255,0.08)] text-[#5B40FF]"
+                }`}
                 onClick={() => setSelecttag(item)}
                 key={ind}
               >
-                {item}
+                #{item.replace(" ", "")}
               </p>
             ))}
           </div>
@@ -99,19 +49,11 @@ function Blog() {
               </div>
             </div>
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
-              {
-                selectTag !== 'All' ?
-                  (
-                    blogs.filter((blog) => selectTag === blog.tag).map((blog, ind) => (
-                      <BlogCard data={blog} key={ind} />
-                    ))
-                  ) :
-                  (
-                    blogs.map((blog, ind) => (
-                      <BlogCard data={blog} key={ind} />
-                    ))
-                  )
-              }
+              {selectTag !== "All"
+                ? blogs
+                    .filter((blog) => selectTag === blog.tag)
+                    .map((blog, ind) => <BlogCard data={blog} key={ind} />)
+                : blogs.map((blog, ind) => <BlogCard data={blog} key={ind} />)}
             </div>
           </div>
         </div>

@@ -1,55 +1,24 @@
-import {
-  award,
-  book,
-  ci1,
-  ci2,
-  ci3,
-  ci4,
-  circlelottie,
-  cloud,
-  code,
-  coin,
-  her1,
-  her2,
-  her3,
-  her4,
-  light,
-  mail,
-  shield,
-  shield2,
-} from "../assets";
+import { award, book, ci1, ci2, ci3, ci4, circlelottie, cloud, code, coin, her1, her2, her3, her4, light, mail, shield, shield2, } from "../assets";
 import Lottie from "lottie-react";
 import { Signup } from "../components";
 import { useEffect } from "react";
 
-// 2xl:bg-[url(./src/assets/her1.svg)] lg:bg-[url(./src/assets/her2.svg)] xs:bg-[url(./src/assets/her3.svg)] bg-[url(./src/assets/her4.svg)]
-function Home() {
+type proptype = {
+  setCongrats: React.Dispatch<React.SetStateAction<boolean>>;
+  congrats: boolean;
+};
+function Home(prop: proptype) {
+  const { congrats, setCongrats } = prop;
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
   return (
     <>
       <div className="relative overflow-visible max-w-[100%] lg:h-[676px] h-[552px] ">
-        <img
-          src={her1}
-          alt=""
-          className="absolute hidden 2xl:block w-full z-[-1] bg-hero"
-        />
-        <img
-          src={her2}
-          alt=""
-          className="absolute hidden lg:block 2xl:hidden w-full z-[-1] bg-hero"
-        />
-        <img
-          src={her3}
-          alt=""
-          className="absolute hidden xs:block lg:hidden w-full z-[-1] bg-hero"
-        />
-        <img
-          src={her4}
-          alt=""
-          className="absolute block xs:hidden w-full z-[-1] bg-hero"
-        />
+        <img src={her1} alt="" className="absolute hidden 2xl:block w-full z-[-1] bg-hero" />
+        <img src={her2} alt="" className="absolute hidden lg:block 2xl:hidden w-full z-[-1] bg-hero" />
+        <img src={her3} alt="" className="absolute hidden xs:block lg:hidden w-full z-[-1] bg-hero" />
+        <img src={her4} alt="" className="absolute block xs:hidden w-full z-[-1] bg-hero" />
         <div className="lg:p-[160px_0_280px_0] xs:p-[120px_40px_200px_40px] p-[120px_6px_174px_6px] z-[10] relative flex justify-center items-center">
           <div className="flex flex-col gap-6 items-center">
             <div className="flex flex-col gap-3 items-center">
@@ -62,10 +31,10 @@ function Home() {
             </div>
             <div className="">
               <div className="min-h-12 justify-center items-center flex-wrap gap-[18px] inline-flex">
-                <button className="w-32 h-12 px-4 py-[18px] text-center text-base font-bold font-inter leading-normal btn btn1 rounded-lg justify-center items-center gap-2.5 flex">
+                <button                  className="w-32 h-12 px-4 py-[18px] text-center text-base font-bold font-inter leading-normal btn btn1 rounded-lg justify-center items-center gap-2.5 flex"  >
                   Get Started
                 </button>
-                <button className="w-[159px] h-12 px-4 py-[18px] rounded-lg border btn btn2 justify-center items-center gap-2.5 flex text-center text-base font-bold font-inter leading-normal">
+                <button className="w-[159px] h-12 px-4 py-[18px] rounded-lg border btn btn2 justify-center items-center gap-2.5 flex text-center text-base font-bold font-inter leading-normal" onClick={() => setCongrats(!congrats)} >
                   Join the Waitlist
                 </button>
               </div>
@@ -369,7 +338,7 @@ function Home() {
               <div className="sm:w-[50%] sm:h-[inherit] flex justify-center items-center bg-[#F6F6FD]">
                 <Lottie
                   animationData={circlelottie}
-                  className="w-[316px] h-[280px] "
+                  className="xs:w-[316px] w-full max-w-full max-h-full h-[280px] "
                   alt="Circle Lottie"
                 />
               </div>

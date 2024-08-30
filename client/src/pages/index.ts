@@ -7,6 +7,7 @@ import Privacy from "./Privacy";
 import Terms from "./Terms";
 import Waitlist from "./Waitlist";
 import WebApp from "./WebApp";
+import ArticlePage from "./ArticlePage";
 
 export {
     About,
@@ -18,4 +19,5 @@ export {
     Terms,
     Waitlist,
     WebApp,
+    ArticlePage
 }

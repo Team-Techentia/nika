@@ -5,6 +5,7 @@ import HomeCard from "./Cards/HomeCard";
 import Signup from "./Signup/Signup";
 import BreadCrumb from "./BreadCrumb/BreadCrumb";
 import Faq from "./Faq/Faq";
+import Congratulation from "./Congratulation/Congratulation";
 export {
     Navbar,
     Footer,
@@ -12,5 +13,6 @@ export {
     HomeCard,
     Signup,
     BreadCrumb,
-    Faq
+    Faq,
+    Congratulation
 }
