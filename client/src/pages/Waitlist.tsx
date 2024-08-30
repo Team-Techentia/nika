@@ -1,7 +1,7 @@
 // import React from 'react'
 
 import { useEffect } from "react";
-import { jo1, jo2, jo3, jo4, jo5, jo6, jo7, mail } from "../assets";
+import { jo1, jo2, jo3, jo4, jo5, jo6, mail } from "../assets";
 import { HomeCard, Signup } from "../components";
 import card from "../utils/card";
 
