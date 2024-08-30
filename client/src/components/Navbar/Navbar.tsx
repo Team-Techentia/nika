@@ -77,7 +77,6 @@ function Navbar() {
             </div>
           </Link>
           <div className="lg:flex links hidden items-center gap-3 text-center text-[#070707] text-[16px] font-inter font-[500] leading-6">
-            {/* <Link to="/">Home</Link> */}
             <Link to="/about" className="p-[4px_7px_4px_12px]">
               About us
             </Link>
@@ -87,11 +86,9 @@ function Navbar() {
             <Link to="/waitlist" className="p-[4px_7px_4px_12px]">
               Waitlist
             </Link>
-            <Link to="/webapp" className="p-[4px_7px_4px_12px]">
+            {/* <Link to="/webapp" className="p-[4px_7px_4px_12px]">
               Web3
-            </Link>
-            {/* <Link to="/article">article</Link> */}
-            {/* <Link to={`/${Math.random()}`}>error_page</Link> */}
+            </Link> */}
           </div>
           <button className="w-32 btn btn3 h-12 text-center text-base font-semibold font-inter leading-tight px-4 py-[18px] rounded-lg justify-center items-center gap-2.5 lg:inline-flex hidden">
             Get Started

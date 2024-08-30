@@ -14,8 +14,7 @@ function Signup() {
               Sign up to be the first to know about our launch
             </div>
             <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter pt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Third-party custodians, audited products, and insurance options ensure the safety of your assets.
             </p>
           </div>
           <div className="lg:w-[50%] w-[100%] bg-white xs:p-5 p-4 gap-3 rounded-[8px] border-[1px] border-[rgba(255,255,255,0.20)] flex flex-col xs:gap-5">

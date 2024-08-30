@@ -18,11 +18,7 @@ function About() {
               About Us
             </h1>
             <p className="font-inter font-[500] leading-6 text-[rgba(7,7,7,0.72)]">
-              Lorem ipsum dolor sit amet consectetur. Commodo tellus at risus
-              venenatis mauris feugiat vitae mi. Cursus tempor sit arcu pulvinar
-              sagittis nibh blandit iaculis. Feugiat nisl diam facilisis neque
-              tempus. Pellentesque accumsan sapien proin phasellus elementum
-              molestie dui.
+            Third-party custodians, audited products, and insurance options ensure the safety of your assets.
             </p>
           </div>
         </div>
@@ -89,13 +85,10 @@ function About() {
                   </div>
                   <div className="flex flex-col items-start gap-2">
                     <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
-                      Lorem ipsum dolor sit amet
+                    Experienced Leadership
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi
+                    Our team is led by seasoned professionals with deep expertise in finance, technology, and digital assets. With a proven track record of building successful startups and driving innovation, our leadership team is committed to delivering exceptional value to our clients and partners.
                     </p>
                   </div>
                 </div>
@@ -105,13 +98,10 @@ function About() {
                   </div>
                   <div className="flex flex-col items-start gap-2">
                     <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
-                      Lorem ipsum dolor sit amet
+                    Cutting-Edge Technology
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi
+                    Our technology team consists of skilled developers and engineers with extensive experience in blockchain, distributed systems, and financial technology. They are dedicated to building and maintaining a robust, secure, and user-friendly platform that leverages the latest advancements in blockchain and smart contract technology to power our innovative products and services.
                     </p>
                   </div>
                 </div>
@@ -121,13 +111,10 @@ function About() {
                   </div>
                   <div className="flex flex-col items-start gap-2">
                     <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
-                      Lorem ipsum dolor sit amet
+                    Strategic Advisors and Collaborators
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi
+                    DiversiFi benefits from the guidance of a distinguished network of advisors and collaborators, including seasoned professionals from top financial institutions, renowned academics, and influential thought leaders in the digital asset space. These strategic partnerships enable us to stay at the forefront of industry developments, ensuring that our platform remains innovative and aligned with best practices.
                     </p>
                   </div>
                 </div>

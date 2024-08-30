@@ -15,17 +15,13 @@ function Error404() {
             Page not found
           </div>
         </div>
-        <div className="w-[294px] h-[68px] pb-5 justify-start items-start inline-flex">
+        <div className="w-[294px] h-[68px] pb-5 justify-center items-center inline-flex text-center">
           <div className="text-center text-[#333333] text-base font-normal font-inter leading-normal">
-            Duis dolor sit amet, consectetur adipiscing elitvestibulum in
-            pharetra.
+            Our team is on it.
           </div>
         </div>
-        <Link
-          to={"/"}
-          className="w-32 h-12 px-4 py-[18px] bg-[#5a40fe] rounded-lg justify-center items-center gap-2.5 inline-flex"
-        >
-          <div className="text-center text-white text-base font-semibold font-['Inter'] leading-tight">
+        <Link to={"/"} className="w-32 h-12 px-4 py-[18px] bg-[#5a40fe] rounded-lg justify-center items-center gap-2.5 inline-flex btn btn1 "        >
+          <div className="text-center  text-base font-semibold font-['Inter'] leading-tight">
             Home Page
           </div>
         </Link>

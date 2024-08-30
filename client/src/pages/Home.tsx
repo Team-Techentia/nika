@@ -31,7 +31,7 @@ function Home(prop: proptype) {
             </div>
             <div className="">
               <div className="min-h-12 justify-center items-center flex-wrap gap-[18px] inline-flex">
-                <button                  className="w-32 h-12 px-4 py-[18px] text-center text-base font-bold font-inter leading-normal btn btn1 rounded-lg justify-center items-center gap-2.5 flex"  >
+                <button className="w-32 h-12 px-4 py-[18px] text-center text-base font-bold font-inter leading-normal btn btn1 rounded-lg justify-center items-center gap-2.5 flex"  >
                   Get Started
                 </button>
                 <button className="w-[159px] h-12 px-4 py-[18px] rounded-lg border btn btn2 justify-center items-center gap-2.5 flex text-center text-base font-bold font-inter leading-normal" onClick={() => setCongrats(!congrats)} >
@@ -58,10 +58,7 @@ function Home(prop: proptype) {
                     Vision Statement
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi
+                    At Nika, we envision a world where digital asset management is seamless, secure, and accessible, becoming the go-to platform for bridging traditional and decentralized finance.
                   </p>
                 </div>
               </div>
@@ -74,10 +71,7 @@ function Home(prop: proptype) {
                     Mission Statement
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi
+                    Our mission is to democratize access to risk-adjusted crypto investments by offering curated, on-chain products that empower all investors with simplicity, security, and value.
                   </p>
                 </div>
               </div>
@@ -90,10 +84,7 @@ function Home(prop: proptype) {
                     Impact and Goals
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi
+                    At Nika, we aim to make sophisticated investments accessible, driving financial inclusion and leading the industry with secure, user-friendly products that bridge traditional and digital finance.
                   </p>
                 </div>
               </div>
@@ -121,9 +112,7 @@ function Home(prop: proptype) {
                       Crypto Asset Indices
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.72)] font-inter">
-                      Get early access to our Crypto Asset Indices. Sign up now
-                      to explore comprehensive market insights, asset
-                      comparisons, and expert-driven analysis tools.
+                      No more Twitter, Discord, and whitepapers, our products are designed to provide diversified exposure to the crypto market.
                     </p>
                   </div>
                 </div>
@@ -135,10 +124,7 @@ function Home(prop: proptype) {
                       Real-World Asset (RWA) Products
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.72)] font-inter">
-                      Unlock advanced trading opportunities with our Arbitrage &
-                      Quant Strategies. Explore proven techniques, gain insights
-                      from real case studies, and watch video demos to enhance
-                      your trading approach
+                      With tokenized traditional assets from real estate to alternative investments, we make your on-chain portfolio complete.
                     </p>
                   </div>
                 </div>
@@ -164,10 +150,7 @@ function Home(prop: proptype) {
                       Yield and Trading Products
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.72)] font-inter">
-                      Unlock advanced trading opportunities with our Arbitrage &
-                      Quant Strategies. Explore proven techniques, gain insights
-                      from real case studies, and watch video demos to enhance
-                      your trading approach
+                      Our optimized yield generation and leverage products remove the complications of DeFi, allowing you to focus on your strategy.
                     </p>
                   </div>
                 </div>
@@ -179,10 +162,7 @@ function Home(prop: proptype) {
                       Arbitrage & Quant Strategies
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.72)] font-inter">
-                      Be among the first to master advanced trading with our
-                      Arbitrage & Quant Strategies. Secure your spot now to
-                      access exclusive techniques, in-depth case studies, and
-                      expert-led video tutorials
+                      You don’t have to be a professional trader to feel like one. Our algorithmic trading products capitalize on market inefficiencies and quantitative models.
                     </p>
                   </div>
                 </div>
@@ -213,13 +193,10 @@ function Home(prop: proptype) {
                 </div>
                 <div className="flex flex-col items-start gap-2">
                   <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
-                    Encryption
+                    Robust On-Chain Asset Custody
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                    Unlock advanced trading opportunities with our Arbitrage &
-                    Quant Strategies. Explore proven techniques, gain insights
-                    from real case studies, and watch video demos to enhance
-                    your trading approach
+                    We prioritize the security of your digital assets through on-chain custody solutions. Our upcoming integrations with reputable, industrial-grade custodians will add an extra layer of protection, ensuring the highest level of safety for your investments.
                   </p>
                 </div>
               </div>
@@ -229,13 +206,10 @@ function Home(prop: proptype) {
                 </div>
                 <div className="flex flex-col items-start gap-2">
                   <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
-                    Protection against hacks
+                    Expert Due Diligence
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                    Unlock advanced trading opportunities with our Arbitrage &
-                    Quant Strategies. Explore proven techniques, gain insights
-                    from real case studies, and watch video demos to enhance
-                    your trading approach
+                    Our team conducts thorough due diligence on all indices and products, adhering to strict investment criteria. This rigorous process mitigates fraud risk and safeguards your interests.
                   </p>
                 </div>
               </div>
@@ -255,8 +229,7 @@ function Home(prop: proptype) {
               Stay Informed
             </div>
             <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter pt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Sign up and stay ahead of the curve with early access and exclusive insights.
             </p>
           </div>
           <div className="lg:w-[50%] w-[100%] bg-white xs:p-5 p-4 gap-3 rounded-[8px] border-[1px] border-[rgba(255,255,255,0.20)] flex flex-col xs:gap-5">
@@ -295,10 +268,7 @@ function Home(prop: proptype) {
                       Institutional Grade Security
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi
+                    Third-party custodians, audited products, and insurance options ensure the safety of your assets.
                     </p>
                   </div>
                 </div>
@@ -311,10 +281,7 @@ function Home(prop: proptype) {
                       Investor Centric Approach
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi
+                    Third-party custodians, audited products, and insurance options ensure the safety of your assets.
                     </p>
                   </div>
                 </div>
@@ -327,10 +294,7 @@ function Home(prop: proptype) {
                       Easily Accessible
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi
+                    Third-party custodians, audited products, and insurance options ensure the safety of your assets.
                     </p>
                   </div>
                 </div>

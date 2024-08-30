@@ -10,43 +10,33 @@ function Waitlist() {
     {
       img: jo1,
       title: "Early Access to Products",
-      detail:
-        "Users want to be among the first to try out new products, features, or services before they are publicly released.",
+      detail:        "Be among the first to access Nika's cutting-edge crypto indices and products, designed to simplify and enhance your digital asset investment experience.",
     },
     {
       img: jo2,
       title: "Exclusive Offers and Bonuses",
-      detail:
-        "Special offers or bonuses available only to waitlist members can be a strong incentive to sign up.",
+      detail:        "Enjoy special bonuses and rewards available only to our waitlist members.",
     },
     {
       img: jo3,
       title: "Personalized Recommendations",
-      detail: "Waitlist members might expect personalized recommendations",
+      detail: "Receive suggestions based on your preferences and risk profile, helping you make informed decisions and optimize your portfolio.s",
     },
     {
       img: jo4,
       title: "Exclusive Insights",
-      detail:
-        "Offering exclusive content like insights, educational resources, or expert tips can attract users to join the waitlist.",
+      detail:        "Stay ahead of the curve with exclusive insights, market analysis, and expert opinions from our team of seasoned professionals and industry leaders.",
     },
     {
       img: jo5,
-      title: "Discounts on Future Purchases",
-      detail: "The potential to receive discounts to join the waitlist.",
+      title: "Discounts on Future Products",
+      detail: "Benefit from lower fees on our upcoming products and services, ensuring you can maximize your returns and minimize costs as an early adopter.",
     },
     {
       img: jo6,
-      title: "Participation in Beta Testing",
-      detail:
-        "The opportunity to participate in beta testing and provide feedback on new products",
-    },
-    {
-      img: jo7,
-      title: "Support for an Innovative Project",
-      detail:
-        "The opportunity to participate in beta testing and provide feedback on new products or services ...",
-    },
+      title: "Shape the Future of DeFi Investing",
+      detail:        "Play an active role in shaping the future of decentralized finance by participating in beta testing, providing feedback, and contributing to the development of our platform.",
+    }
   ];
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -57,7 +47,7 @@ function Waitlist() {
         <div className="w-[1280px] max-w-full flex xs:gap-8 gap-6 lg:flex-row lg:items-center flex-col">
           <div className="lg:w-[50%] w-full">
             <h1 className="lg:text-[64px] text-[42px] tracking-[-1.28px] text-start leading-[100%] text-[#070707] font-HelveticaNeueCyr font-[550] lg:max-w-[690px] max-w-[500px]">
-              Be the First in Line:
+            On-Chain Diversification Starts Here:
             </h1>
             <p className="font-inter font-[500] leading-6 text-[rgba(7,7,7,0.72)]">
               Join Our Waitlist Today
