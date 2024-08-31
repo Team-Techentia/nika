@@ -8,6 +8,7 @@ type propType = {
   tags: string[];
 };
 function Blog(prop: propType) {
+  
   const { blogs, tags } = prop;
 
   const [selectTag, setSelecttag] = useState("All");

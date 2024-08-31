@@ -2,56 +2,38 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Congratulation, Footer, Navbar } from "./components";
 import { About, Article, ArticlePage, Blog, Error404, Home, Privacy, Terms, Waitlist, WebApp, } from "./pages";
-import { bl1, bl2, bl3 } from "./assets";
 import blog from "./utils/blog";
-import { useState } from "react";
+import { useEffect,useState } from "react";
+import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { setBlogs } from './store/slices';
+import { RootState } from './store/store';
 
 function App() {
 
-  const blogs: blog[] = [
-    {
-      img: bl1,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "Investment Strategies",
-      date: "March 27, 2024",
-    },
-    {
-      img: bl2,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "Tag",
-      date: "March 27, 2024",
-    },
-    {
-      img: bl3,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "Investment Strategies",
-      date: "March 27, 2024",
-    },
-    {
-      img: bl2,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "Insights",
-      date: "March 27, 2024",
-    },
-    {
-      img: bl1,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "Updates",
-      date: "March 27, 2024",
-    },
-    {
-      img: bl3,
-      title: "Understanding the Role of CPAs in the Era of Digital Finance",
-      post: `Example: "At Alongside, we believe in simplifying blockchain diversification, making it accessible to everyone. `,
-      tag: "DeFi Tutorials",
-      date: "March 27, 2024",
-    },
-  ];
+  const dispatch = useDispatch();
+  const blogs: blog[] = useSelector((state: RootState) => state.main.blogs);
+  const fetchBlogs = async () => {
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/blogs`);
+      const fetchedBlogs = res.data.data.map((Blogs:any) => ({
+        img: Blogs.coverImage || '',
+        title: Blogs.title,
+        post: Blogs.post,
+        tag: Blogs.tag,
+        date: Blogs.date,
+      }));
+      dispatch(setBlogs(fetchedBlogs));
+    } catch (e: any) {
+      console.log(e)
+    }
+
+  }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    fetchBlogs()
+  }, [])
 
   const tags: string[] = [
     "All",
