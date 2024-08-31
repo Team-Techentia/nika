@@ -7,12 +7,12 @@ import { useEffect,useState } from "react";
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setBlogs } from './store/slices';
-import { RootState } from './store/store';
+import { RootSate } from './store/store';
 
 function App() {
 
   const dispatch = useDispatch();
-  const blogs: blog[] = useSelector((state: RootState) => state.main.blogs);
+  const blogs: blog[] = useSelector((state: RootSate) => state.main.blogs);
   const fetchBlogs = async () => {
     try {
       const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/blogs`);
