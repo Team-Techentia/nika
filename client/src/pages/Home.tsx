@@ -2,7 +2,7 @@ import { award, book, ci1, ci2, ci3, ci4, circlelottie, cloud, code, coin, her1,
 import Lottie from "lottie-react";
 import { Signup } from "../components";
 import { useEffect } from "react";
-
+import { Link } from 'react-router-dom';
 type proptype = {
   setCongrats: React.Dispatch<React.SetStateAction<boolean>>;
   congrats: boolean;
@@ -31,11 +31,11 @@ function Home(prop: proptype) {
             </div>
             <div className="">
               <div className="min-h-12 justify-center items-center flex-wrap gap-[18px] inline-flex">
-              
-                  <button href="/waitlist" className="w-32 h-12 px-4 py-[18px] text-center text-base font-bold font-inter leading-normal btn btn1 rounded-lg justify-center items-center gap-2.5 flex"  >
+               <Link to="/waitlist">
+                  <button className="w-32 h-12 px-4 py-[18px] text-center text-base font-bold font-inter leading-normal btn btn1 rounded-lg justify-center items-center gap-2.5 flex"  >
                   Get Started
                   </button>
-
+                </Link>
                 <button className="w-[159px] h-12 px-4 py-[18px] rounded-lg border btn btn2 justify-center items-center gap-2.5 flex text-center text-base font-bold font-inter leading-normal" onClick={() => setCongrats(!congrats)} >
                   Join the Waitlist
                 </button>
@@ -245,9 +245,11 @@ function Home(prop: proptype) {
                 <img src={mail} alt="Mail" />
               </div>
             </div>
-            <button href="/waitlist" className="h-[34px] btn btn1 p- text-center text-sm font-medium font-ibm leading-none rounded flex-col justify-center items-center inline-flex">
+            <Link to="/waitlist">
+            <button className="h-[34px] btn btn1 p- text-center text-sm font-medium font-ibm leading-none rounded flex-col justify-center items-center inline-flex">
               Get Started
             </button>
+            </Link>
           </div>
         </div>
       </form>
