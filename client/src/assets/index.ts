@@ -57,9 +57,13 @@ import sideNav2 from './sidenav2.svg'
 import defImg from './default-img.png'
 import trash from './Trash.png'
 import edit from './Edit.png'
+import trash2 from './trash2.png'
+import attach_file from './attach_file.png'
 
 
 export {
+    trash2,
+    attach_file,
     defImg,edit,trash,
     logo,
     ham,

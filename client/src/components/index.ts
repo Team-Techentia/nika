@@ -10,8 +10,12 @@ import DashNav from "./Dashboard/DashNav";
 import SideNav from "./Dashboard/SideNav";
 import CreateNewPopup from "./Dashboard/CreateNewBlog";
 import Alert from "./alert/Alert";
+import FundraiserItem from "./Dashboard/BlogItem";
+import DeleteFundraiserPopup from "./Dashboard/DeleteFundraiserPopup";
 
 export {
+    DeleteFundraiserPopup,
+    FundraiserItem,
     Alert,
     Navbar,
     Footer,

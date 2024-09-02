@@ -9,11 +9,13 @@ import Waitlist from "./Waitlist";
 import WebApp from "./WebApp";
 import ArticlePage from "./ArticlePage";
 import Dashboard from "./Dashboard";
+import BlogUpdate from "./BlogUpdate";
 
 export {
     About,
     Article,
     Blog,
+    BlogUpdate,
     Error404,
     Home,
     Privacy,

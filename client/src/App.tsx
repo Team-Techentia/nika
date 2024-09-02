@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Alert, Congratulation, Footer, Navbar } from "./components";
-import { About, Article, ArticlePage, Blog, Dashboard, Error404, Home, Privacy, Terms, Waitlist, WebApp, } from "./pages";
+import { About, Article, ArticlePage, Blog, BlogUpdate, Dashboard, Error404, Home, Privacy, Terms, Waitlist, WebApp, } from "./pages";
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
@@ -49,7 +49,7 @@ function App() {
 
   const [congrats, setCongrats] = useState(false);
 
-  const alert = useSelector((state: RootState)=> state.ui.alert);
+  const alert = useSelector((state: RootState) => state.ui.alert);
 
   return (
     <>
@@ -61,20 +61,21 @@ function App() {
 
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<><Navbar /><Home congrats={congrats} setCongrats={setCongrats} /> </>} />
-            <Route path="/about" element={<><Navbar /><About /> </>} />
-            <Route path="/blog" element={<><Navbar /><Blog blogs={blogs} tags={tags} /> </>} />
-            <Route path="/blog/articles-news" index element={<><Navbar /><Article blogs={blogs.slice(0, 3)} /> </>} />
-            <Route path="/blog/:title" element={<><Navbar /><ArticlePage blogs={blogs} tags={tags} /> </>} />
-            <Route path="/privacy" element={<><Navbar /><Privacy /> </>} />
-            <Route path="/terms" element={<><Navbar /><Terms /> </>} />
-            <Route path="/waitlist" element={<><Navbar /><Waitlist /> </>} />
-            <Route path="/webapp" element={<><Navbar /><WebApp /> </>} />
-            <Route path="*" element={<><Navbar /><Error404 /> </>} />
+            <Route path="/" element={<><Navbar /><Home congrats={congrats} setCongrats={setCongrats} /><Footer /> </>} />
+            <Route path="/about" element={<><Navbar /><About /><Footer /> </>} />
+            <Route path="/blog" element={<><Navbar /><Blog blogs={blogs} tags={tags} /><Footer /> </>} />
+            <Route path="/blog/articles-news" index element={<><Navbar /><Article blogs={blogs.slice(0, 3)} /><Footer /> </>} />
+            <Route path="/blog/:title" element={<><Navbar /><ArticlePage blogs={blogs} tags={tags} /><Footer /> </>} />
+            <Route path="/privacy" element={<><Navbar /><Privacy /><Footer /> </>} />
+            <Route path="/terms" element={<><Navbar /><Terms /><Footer /> </>} />
+            <Route path="/waitlist" element={<><Navbar /><Waitlist /><Footer /> </>} />
+            <Route path="/webapp" element={<><Navbar /><WebApp /><Footer /> </>} />
+            <Route path="*" element={<><Navbar /><Error404 /><Footer /> </>} />
             <Route path="/dashboard" element={<><Dashboard /> </>} />
             <Route path="/profile" element={<><Dashboard /> </>} />
+            <Route path="/blogs/:id" element={<><BlogUpdate /></>} />
           </Routes>
-          <Footer />
+
         </BrowserRouter>
 
       </div>
