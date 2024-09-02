@@ -53,13 +53,13 @@ function Navbar() {
               >
                 Waitlist
               </Link>
-              <Link
+             {/* <Link
                 to="/webapp"
                 className="p-[4px_7px_4px_12px]"
                 onClick={() => dispatcher(setNavOpen(!navOpen))}
               >
                 Web3
-              </Link>
+              </Link>*/}
             </div>
           </div>
         </div>
