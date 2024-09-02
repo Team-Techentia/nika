@@ -31,9 +31,11 @@ function Home(prop: proptype) {
             </div>
             <div className="">
               <div className="min-h-12 justify-center items-center flex-wrap gap-[18px] inline-flex">
-                <button className="w-32 h-12 px-4 py-[18px] text-center text-base font-bold font-inter leading-normal btn btn1 rounded-lg justify-center items-center gap-2.5 flex"  >
+               <Link to="/waitlist" >
+                  <button className="w-32 h-12 px-4 py-[18px] text-center text-base font-bold font-inter leading-normal btn btn1 rounded-lg justify-center items-center gap-2.5 flex"  >
                   Get Started
-                </button>
+                  </button>
+                 </Link>
                 <button className="w-[159px] h-12 px-4 py-[18px] rounded-lg border btn btn2 justify-center items-center gap-2.5 flex text-center text-base font-bold font-inter leading-normal" onClick={() => setCongrats(!congrats)} >
                   Join the Waitlist
                 </button>
