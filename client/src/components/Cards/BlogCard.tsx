@@ -1,9 +1,9 @@
 // import React from 'react'
 import { Link } from "react-router-dom";
-import blog from "../../utils/blog";
+import { Blogs } from "../../interfaces";
 
 type proptype = {
-  data: blog;
+  data: Blogs;
 };
 
 function BlogCard(prop: proptype) {
@@ -11,7 +11,7 @@ function BlogCard(prop: proptype) {
     <Link to={`/blog/${prop.data.title}`}>
       <div className="flex h-full p-3 gap-5 flex-col items-start w-[100%] rounded-[12px] bg-[rgba(7,7,7,0.03)]">
         <div className="w-full">
-          <img src={prop.data.img} className="w-full h-[200px]" alt="" />
+          <img src={prop.data.img || ''} className="w-full h-[200px]" alt="" />
         </div>
         <div className="flex flex-col items-start gap-4 ">
           <div className="flex flex-col items-start gap-2 ">

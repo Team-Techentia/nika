@@ -1,22 +1,24 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Congratulation, Footer, Navbar } from "./components";
-import { About, Article, ArticlePage, Blog, Error404, Home, Privacy, Terms, Waitlist, WebApp, } from "./pages";
-import blog from "./utils/blog";
-import { useEffect,useState } from "react";
+import { Alert, Congratulation, Footer, Navbar } from "./components";
+import { About, Article, ArticlePage, Blog, Dashboard, Error404, Home, Privacy, Terms, Waitlist, WebApp, } from "./pages";
+import { useEffect, useState } from "react";
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setBlogs } from './store/slices';
-import { RootSate } from './store/store';
+import { RootState } from './store/store';
+import { Blogs } from "./interfaces";
 
 function App() {
 
   const dispatch = useDispatch();
-  const blogs: blog[] = useSelector((state: RootSate) => state.main.blogs);
+
+  const blogs: Blogs[] = useSelector((state: RootState) => state.main.blogs);
+
   const fetchBlogs = async () => {
     try {
       const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/blogs`);
-      const fetchedBlogs = res.data.data.map((Blogs:any) => ({
+      const fetchedBlogs = res.data.data.map((Blogs: any) => ({
         img: Blogs.coverImage || '',
         title: Blogs.title,
         post: Blogs.post,
@@ -29,6 +31,7 @@ function App() {
     }
 
   }
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -46,25 +49,30 @@ function App() {
 
   const [congrats, setCongrats] = useState(false);
 
+  const alert = useSelector((state: RootState)=> state.ui.alert);
+
   return (
     <>
       {congrats && <Congratulation setCongrats={setCongrats} />}
 
+      {alert.message && <Alert />}
+
       <div className={`${congrats && "h-screen overflow-auto"}`}>
 
         <BrowserRouter>
-          <Navbar />
           <Routes>
-            <Route path="/" element={<Home congrats={congrats} setCongrats={setCongrats} />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog blogs={blogs} tags={tags} />} />
-            <Route path="/blog/articles-news" index element={<Article blogs={blogs.slice(0, 3)} />} />
-            <Route path="/blog/:title" element={<ArticlePage blogs={blogs} tags={tags} />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/waitlist" element={<Waitlist />} />
-            <Route path="/webapp" element={<WebApp />} />
-            <Route path="*" element={<Error404 />} />
+            <Route path="/" element={<><Navbar /><Home congrats={congrats} setCongrats={setCongrats} /> </>} />
+            <Route path="/about" element={<><Navbar /><About /> </>} />
+            <Route path="/blog" element={<><Navbar /><Blog blogs={blogs} tags={tags} /> </>} />
+            <Route path="/blog/articles-news" index element={<><Navbar /><Article blogs={blogs.slice(0, 3)} /> </>} />
+            <Route path="/blog/:title" element={<><Navbar /><ArticlePage blogs={blogs} tags={tags} /> </>} />
+            <Route path="/privacy" element={<><Navbar /><Privacy /> </>} />
+            <Route path="/terms" element={<><Navbar /><Terms /> </>} />
+            <Route path="/waitlist" element={<><Navbar /><Waitlist /> </>} />
+            <Route path="/webapp" element={<><Navbar /><WebApp /> </>} />
+            <Route path="*" element={<><Navbar /><Error404 /> </>} />
+            <Route path="/dashboard" element={<><Dashboard /> </>} />
+            <Route path="/profile" element={<><Dashboard /> </>} />
           </Routes>
           <Footer />
         </BrowserRouter>

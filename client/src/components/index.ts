@@ -6,7 +6,13 @@ import Signup from "./Signup/Signup";
 import BreadCrumb from "./BreadCrumb/BreadCrumb";
 import Faq from "./Faq/Faq";
 import Congratulation from "./Congratulation/Congratulation";
+import DashNav from "./Dashboard/DashNav";
+import SideNav from "./Dashboard/SideNav";
+import CreateNewPopup from "./Dashboard/CreateNewBlog";
+import Alert from "./alert/Alert";
+
 export {
+    Alert,
     Navbar,
     Footer,
     BlogCard,
@@ -14,5 +20,8 @@ export {
     Signup,
     BreadCrumb,
     Faq,
-    Congratulation
+    Congratulation,
+    DashNav,
+    SideNav,
+    CreateNewPopup,
 }

@@ -1,5 +1,5 @@
 export interface Blogs {
-    img?: string;
+    img?: null | string;
     title?: string;
     post?: string;
     tag?: string;

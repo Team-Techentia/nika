@@ -57,7 +57,7 @@ function Footer() {
                 </div>
                 <Link
                   className="text-[rgba(255,255,255,0.56)] text-sm font-normal font-['Inter'] leading-tight"
-                  to={"/blog"}
+                  to={"/dashboard"}
                 >
                   Blog
                 </Link>

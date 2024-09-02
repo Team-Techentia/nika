@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { close, ham, logo } from "../../assets";
 import { useDispatch, useSelector } from "react-redux";
 import { setNavOpen } from "../../store/UISlice";
-import { RootSate } from "../../store/store";
+import { RootState } from "../../store/store";
 
 function Navbar() {
-  const navOpen = useSelector((store: RootSate) => store.ui.navOpen);
+  const navOpen = useSelector((store: RootState) => store.ui.navOpen);
   const dispatcher = useDispatch();
 
   return (

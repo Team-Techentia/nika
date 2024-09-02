@@ -1,10 +1,12 @@
 // import React from 'react'
 import { useEffect, useState } from "react";
 import { BlogCard, BreadCrumb, Signup } from "../components";
-import blog from "../utils/blog";
+import { Blogs } from "../interfaces";
+
 type propType = {
-  blogs: blog[];
+  blogs: Blogs[];
 };
+
 function Article(prop: propType) {
   const { blogs } = prop;
   const tags: string[] = [

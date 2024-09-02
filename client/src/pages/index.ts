@@ -8,6 +8,7 @@ import Terms from "./Terms";
 import Waitlist from "./Waitlist";
 import WebApp from "./WebApp";
 import ArticlePage from "./ArticlePage";
+import Dashboard from "./Dashboard";
 
 export {
     About,
@@ -19,5 +20,6 @@ export {
     Terms,
     Waitlist,
     WebApp,
-    ArticlePage
+    ArticlePage,
+    Dashboard,
 }

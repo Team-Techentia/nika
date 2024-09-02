@@ -1,31 +1,26 @@
 import { useParams } from "react-router-dom";
-import blog from "../utils/blog";
 import { BreadCrumb, Signup } from "../components";
-import {
-  al1,
-  al2,
-  al3,
-  al4,
-  artSoc1,
-  artSoc2,
-  artSoc3,
-  artSoc4,
-  mailWhite,
-} from "../assets";
+import { al1, al2, al3, al4, artSoc1, artSoc2, artSoc3, artSoc4, mailWhite, } from "../assets";
 import { useEffect } from "react";
+import { Blogs } from "../interfaces";
 
 type propType = {
-  blogs: blog[];
+  blogs: Blogs[];
   tags: string[];
 };
+
 function ArticlePage(prop: propType) {
+
   const { blogs, tags } = prop;
   const { title } = useParams();
+
   const blog = blogs[0];
   console.log(blog, title);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
   return (
     <>
       <BreadCrumb />
@@ -38,60 +33,20 @@ function ArticlePage(prop: propType) {
                   Fast links
                 </div>
                 <div className="flex flex-col gap-3 pl-3">
-                  <a
-                    href="#digital-finance"
-                    className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                  >
-                    Navigating the Digital Finance Landscape
+                  <a href="#digital-finance" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"> Navigating the Digital Finance Landscape</a>
+                  <a href="#ledgers" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"> From Ledgers to Leadership</a>
+                  <a href="#digital-wave" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"> The Digital Wave</a>
+                  <a href="#advisor" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
+                  > The Strategic Advisor                  </a>
+                  <a href="#digital-finance" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
+                  > Continuous Learning and Adaptation                  </a>
+                  <a href="#digital-finance" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"> Specialty Tax Incentives in Digital Transformation
                   </a>
-                  <a
-                    href="#ledgers"
-                    className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                  >
-                    From Ledgers to Leadership
+                  <a href="#digital-finance" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"> Integrating Specialty Tax Incentives into Business Strategy
                   </a>
-                  <a
-                    href="#digital-wave"
-                    className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                  >
-                    The Digital Wave
+                  <a href="#digital-finance" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"> Challenges and Opportunities
                   </a>
-                  <a
-                    href="#advisor"
-                    className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                  >
-                    The Strategic Advisor
-                  </a>
-                  <a
-                    href="#digital-finance"
-                    className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                  >
-                    Continuous Learning and Adaptation
-                  </a>
-                  <a
-                    href="#digital-finance"
-                    className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                  >
-                    Specialty Tax Incentives in Digital Transformation
-                  </a>
-                  <a
-                    href="#digital-finance"
-                    className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                  >
-                    Integrating Specialty Tax Incentives into Business Strategy
-                  </a>
-                  <a
-                    href="#digital-finance"
-                    className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                  >
-                    Challenges and Opportunities
-                  </a>
-                  <a
-                    href="#looking-ahead"
-                    className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                  >
-                    Looking Ahead
-                  </a>
+                  <a href="#looking-ahead" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"> Looking Ahead                  </a>
                 </div>
               </div>
               <div className="h-[124px] flex-col justify-start items-start gap-2 inline-flex">
@@ -99,15 +54,8 @@ function ArticlePage(prop: propType) {
                   Get productivity tips straight to your inbox
                 </div>
                 <div className="h-[34px] flex-col w-full justify-start items-start gap-1 flex">
-                  <div className="h-[34px] pl-3 w-full pr-[7px] py-[5px] bg-white/20 rounded border border-white/30 justify-start items-center inline-flex">
-                    <input
-                      type="email"
-                      className="text-[rgba(255,255,255,0.72)] bg-[transparent] border-none outline-none w-full text-sm font-normal font-ibm leading-tight placeholder:text-[rgba(255,255,255,0.72)]"
-                      placeholder="Mail"
-                    />
-                    <div className="w-5 h-5 relative">
-                      <img src={mailWhite} alt="Mail" />{" "}
-                    </div>
+                  <div className="h-[34px] pl-3 w-full pr-[7px] py-[5px] bg-white/20 rounded border border-white/30 justify-start items-center inline-flex"> <input
+                    type="email" className="text-[rgba(255,255,255,0.72)] bg-[transparent] border-none outline-none w-full text-sm font-normal font-ibm leading-tight placeholder:text-[rgba(255,255,255,0.72)]" placeholder="Mail" /> <div className="w-5 h-5 relative">   <img src={mailWhite} alt="Mail" />{" "} </div>
                   </div>
                 </div>
                 <button className="h-[34px] w-full px-3 py-2.5 rounded text-center btn btn5 text-sm font-medium font-ibm leading-none flex-col justify-center items-center flex">
@@ -117,7 +65,7 @@ function ArticlePage(prop: propType) {
             </article>
             <div className="flex flex-col w-full gap-5 lg:w-[576px]">
               <div className="w-full" id="digital-finance">
-                <img src={blog.img} className="w-full h-[307px]" alt="" />
+                <img src={blog.img || ''} className="w-full h-[307px]" alt="" />
               </div>
               <div
                 id="#ledgers"
@@ -132,115 +80,58 @@ function ArticlePage(prop: propType) {
               </div>
               <div className="grid sm:grid-cols-4 grid-cols-1 gap-3">
                 <div className="sm:col-span-2">
-                  <div className="text-[rgba(0,0,0,0.56)] text-sm font-normal font-ibm leading-tight">
-                    Author
+                  <div className="text-[rgba(0,0,0,0.56)] text-sm font-normal font-ibm leading-tight"> Author
                   </div>
-                  <div className="text-black text-lg font-medium font-ibm leading-[25.20px]">
-                    Abby Massey
+                  <div className="text-black text-lg font-medium font-ibm leading-[25.20px]"> Abby Massey
                   </div>
                 </div>
                 <div className="">
-                  <div className="text-[rgba(0,0,0,0.56)] text-sm font-normal font-ibm leading-tight">
-                    Read
+                  <div className="text-[rgba(0,0,0,0.56)] text-sm font-normal font-ibm leading-tight"> Read
                   </div>
 
-                  <div className="text-black text-lg font-medium font-ibm leading-[25.20px]">
-                    8 min
+                  <div className="text-black text-lg font-medium font-ibm leading-[25.20px]"> 8 min
                   </div>
                 </div>
                 <div className="">
-                  <div className="text-[rgba(0,0,0,0.56)] text-sm font-normal font-ibm leading-tight">
-                    Share
+                  <div className="text-[rgba(0,0,0,0.56)] text-sm font-normal font-ibm leading-tight"> Share
                   </div>
-                  <div className="flex gap-1">
-                    <img src={al1} alt="Link" />
-                    <img src={al2} alt="Linkdin" />
-                    <img src={al3} alt="Facebook" />
-                    <img src={al4} alt="Twitter" />
+                  <div className="flex gap-1"> <img src={al1} alt="Link" /> <img src={al2} alt="Linkdin" /> <img src={al3} alt="Facebook" /> <img src={al4} alt="Twitter" />
                   </div>
                 </div>
               </div>
               <article className="w-full lg:hidden flex flex-col p-4 bg-[#5B40FF] rounded-[6px] gap-6 ">
                 <div className="pb-6 flex flex-col w-full gap-3 border-b-[1px] border-[rgba(255,255,255,0.20)]">
-                  <div className="text-white text-sm font-normal font-inter leading-tight">
-                    Fast links
+                  <div className="text-white text-sm font-normal font-inter leading-tight"> Fast links
                   </div>
-                  <div className="flex flex-col gap-3 pl-3">
-                    <a
-                      href="#digital-finance"
-                      className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                    >
-                      Navigating the Digital Finance Landscape
-                    </a>
-                    <a
-                      href="#ledgers"
-                      className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                    >
-                      From Ledgers to Leadership
-                    </a>
-                    <a
-                      href="#digital-wave"
-                      className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                    >
-                      The Digital Wave
-                    </a>
-                    <a
-                      href="#advisor"
-                      className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                    >
-                      The Strategic Advisor
-                    </a>
-                    <a
-                      href="#digital-finance"
-                      className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                    >
-                      Continuous Learning and Adaptation
-                    </a>
-                    <a
-                      href="#digital-finance"
-                      className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                    >
-                      Specialty Tax Incentives in Digital Transformation
-                    </a>
-                    <a
-                      href="#digital-finance"
-                      className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                    >
-                      Integrating Specialty Tax Incentives into Business
+                  <div className="flex flex-col gap-3 pl-3"> <a
+                    href="#digital-finance" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight" >   Navigating the Digital Finance Landscape
+                  </a> <a
+                    href="#ledgers" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight" >   From Ledgers to Leadership
+                    </a> <a
+                      href="#digital-wave" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight" >   The Digital Wave
+                    </a> <a
+                      href="#advisor" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight" >   The Strategic Advisor
+                    </a> <a
+                      href="#digital-finance" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight" >   Continuous Learning and Adaptation
+                    </a> <a
+                      href="#digital-finance" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight" >   Specialty Tax Incentives in Digital Transformation
+                    </a> <a
+                      href="#digital-finance" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight" >   Integrating Specialty Tax Incentives into Business
                       Strategy
-                    </a>
-                    <a
-                      href="#digital-finance"
-                      className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                    >
-                      Challenges and Opportunities
-                    </a>
-                    <a
-                      href="#looking-ahead"
-                      className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight"
-                    >
-                      Looking Ahead
+                    </a> <a
+                      href="#digital-finance" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight" >   Challenges and Opportunities
+                    </a> <a
+                      href="#looking-ahead" className="text-[rgba(255,255,255,0.72)] scroll-smooth text-sm font-normal font-inter leading-tight" >   Looking Ahead
                     </a>
                   </div>
                 </div>
                 <div className="h-[124px] flex-col justify-start items-start gap-2 inline-flex">
-                  <div className="text-white text-base font-semibold font-inter leading-tight">
-                    Get productivity tips straight to your inbox
+                  <div className="text-white text-base font-semibold font-inter leading-tight"> Get productivity tips straight to your inbox
                   </div>
-                  <div className="h-[34px] flex-col w-full justify-start items-start gap-1 flex">
-                    <div className="h-[34px] pl-3 w-full pr-[7px] py-[5px] bg-white/20 rounded border border-white/30 justify-start items-center inline-flex">
-                      <input
-                        type="email"
-                        className="text-[rgba(255,255,255,0.72)] bg-[transparent] border-none outline-none w-full text-sm font-normal font-ibm leading-tight placeholder:text-[rgba(255,255,255,0.72)]"
-                        placeholder="Mail"
-                      />
-                      <div className="w-5 h-5 relative">
-                        <img src={mailWhite} alt="Mail" />{" "}
-                      </div>
-                    </div>
+                  <div className="h-[34px] flex-col w-full justify-start items-start gap-1 flex"> <div className="h-[34px] pl-3 w-full pr-[7px] py-[5px] bg-white/20 rounded border border-white/30 justify-start items-center inline-flex">   <input
+                    type="email" className="text-[rgba(255,255,255,0.72)] bg-[transparent] border-none outline-none w-full text-sm font-normal font-ibm leading-tight placeholder:text-[rgba(255,255,255,0.72)]" placeholder="Mail" />   <div className="w-5 h-5 relative">     <img src={mailWhite} alt="Mail" />{" "}   </div> </div>
                   </div>
-                  <button className="h-[34px] w-full px-3 py-2.5 rounded text-center btn btn5 text-sm font-medium font-ibm leading-none flex-col justify-center items-center flex">
-                    Subscribe
+                  <button className="h-[34px] w-full px-3 py-2.5 rounded text-center btn btn5 text-sm font-medium font-ibm leading-none flex-col justify-center items-center flex"> Subscribe
                   </button>
                 </div>
               </article>
@@ -254,8 +145,7 @@ function ArticlePage(prop: propType) {
                   Public Accountants (CPAs) operate.
                 </div>
                 <div className="p-6 rounded-[8px] border-[#8B73C6] border-l-[1px] bg-[#EEEAF7]">
-                  <div className="text-[rgba(7,7,7,0.72)] xs:py-5 text-sm font-normal font-inter leading-tight">
-                    Other major cryptocurrencies, including Ethereum (ETH) and
+                  <div className="text-[rgba(7,7,7,0.72)] xs:py-5 text-sm font-normal font-inter leading-tight"> Other major cryptocurrencies, including Ethereum (ETH) and
                     Solana (SOL), are also experiencing upward momentum as the
                     overall market capitalization of crypto assets climbs back
                     to $1.5 trillion. Experts suggest that the crypto market may
@@ -357,15 +247,10 @@ function ArticlePage(prop: propType) {
                   Subscribe for regular updates
                 </div>
                 <div className="justify-start items-center gap-1 w-full inline-flex xs:flex-row flex-col">
-                  <div className="h-[34px] w-full px-3 py-[7px] bg-white/20 rounded border border-white/30 justify-start items-center gap-2.5 flex">
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      className="border-none outline-none bg-[transparent] w-full text-[rgba(7,7,7,0.72)] text-sm font-normal font-ibm leading-tight"
-                    />
+                  <div className="h-[34px] w-full px-3 py-[7px] bg-white/20 rounded border border-white/30 justify-start items-center gap-2.5 flex"> <input
+                    type="email" placeholder="Your Email" className="border-none outline-none bg-[transparent] w-full text-[rgba(7,7,7,0.72)] text-sm font-normal font-ibm leading-tight" />
                   </div>
-                  <button className="px-3 py-2.5 btn btn5 text-center text-sm font-medium font-ibm leading-none xs:w-fit w-full rounded flex-col justify-center items-center inline-flex">
-                    Subscribe
+                  <button className="px-3 py-2.5 btn btn5 text-center text-sm font-medium font-ibm leading-none xs:w-fit w-full rounded flex-col justify-center items-center inline-flex"> Subscribe
                   </button>
                 </div>
               </form>
@@ -402,120 +287,56 @@ function ArticlePage(prop: propType) {
               </div>
               <div className="xs:pt-8 pt-4 w-full flex flex-col gap-2.5">
                 <div className="flex justify-between p-4 bg-[black] rounded-[6px]">
-                  <div className="text-white text-lg font-medium font-ibm leading-[25.20px]">
-                    Share this article
+                  <div className="text-white text-lg font-medium font-ibm leading-[25.20px]"> Share this article
                   </div>
-                  <div className="flex gap-1">
-                    <div className="w-8 h-8 rounded-[6px] bg-[rgba(255,255,255,0.20)] flex justify-center items-center">
-                      <img src={artSoc1} alt="Link" />
-                    </div>
-                    <div className="w-8 h-8 rounded-[6px] bg-[rgba(255,255,255,0.20)] flex justify-center items-center">
-                      <img src={artSoc2} alt="Linkedin" />
-                    </div>
-                    <div className="w-8 h-8 rounded-[6px] bg-[rgba(255,255,255,0.20)] flex justify-center items-center">
-                      <img src={artSoc3} alt="Facebook" />
-                    </div>
-                    <div className="w-8 h-8 rounded-[6px] bg-[rgba(255,255,255,0.20)] flex justify-center items-center">
-                      <img src={artSoc4} alt="Twitter" />
-                    </div>
+                  <div className="flex gap-1"> <div className="w-8 h-8 rounded-[6px] bg-[rgba(255,255,255,0.20)] flex justify-center items-center">   <img src={artSoc1} alt="Link" /> </div> <div className="w-8 h-8 rounded-[6px] bg-[rgba(255,255,255,0.20)] flex justify-center items-center">   <img src={artSoc2} alt="Linkedin" /> </div> <div className="w-8 h-8 rounded-[6px] bg-[rgba(255,255,255,0.20)] flex justify-center items-center">   <img src={artSoc3} alt="Facebook" /> </div> <div className="w-8 h-8 rounded-[6px] bg-[rgba(255,255,255,0.20)] flex justify-center items-center">   <img src={artSoc4} alt="Twitter" /> </div>
                   </div>
                 </div>
                 <form
                   method="POST"
                   className="xs:p-6 p-4 bg-[#070707] rounded-md flex-col justify-start items-start gap-2 inline-flex"
                 >
-                  <div className="text-white text-base font-medium font-ibm leading-[17.92px]">
-                    Subscribe for regular updates
+                  <div className="text-white text-base font-medium font-ibm leading-[17.92px]"> Subscribe for regular updates
                   </div>
-                  <div className="justify-start items-center gap-1 w-full inline-flex xs:flex-row flex-col">
-                    <div className="h-[34px] w-full px-3 py-[7px] bg-white/20 rounded border border-white/30 justify-start items-center gap-2.5 flex">
-                      <input
-                        type="email"
-                        placeholder="Your Email"
-                        className="border-none outline-none bg-[transparent] w-full text-[rgba(7,7,7,0.72)] text-sm font-normal font-ibm leading-tight"
-                      />
-                    </div>
-                    <button className="px-3 py-2.5 btn btn5 xs:w-fit w-full text-center text-sm font-medium font-ibm leading-none rounded flex-col justify-center items-center inline-flex">
-                      Subscribe
+                  <div className="justify-start items-center gap-1 w-full inline-flex xs:flex-row flex-col"> <div className="h-[34px] w-full px-3 py-[7px] bg-white/20 rounded border border-white/30 justify-start items-center gap-2.5 flex">   <input
+                    type="email" placeholder="Your Email" className="border-none outline-none bg-[transparent] w-full text-[rgba(7,7,7,0.72)] text-sm font-normal font-ibm leading-tight" /> </div> <button className="px-3 py-2.5 btn btn5 xs:w-fit w-full text-center text-sm font-medium font-ibm leading-none rounded flex-col justify-center items-center inline-flex">   Subscribe
                     </button>
                   </div>
                 </form>
               </div>
               <article className="w-full lg:hidden flex flex-col gap-8 ">
                 <div className="flex flex-col gap-3 w-full">
-                  <div className="text-black text-xl font-HelveticaNeueCyr leading-normal">
-                    Related articles
+                  <div className="text-black text-xl font-HelveticaNeueCyr leading-normal"> Related articles
                   </div>
                 </div>
                 <div className="flex sm:flex-row flex-col gap-2">
-                  <div className="p-4 bg-[#f4f3fd] rounded flex-col justify-start items-start gap-4 inline-flex">
-                    <div className="flex-col justify-start items-start gap-3 flex">
-                      <div
-                        className="
-    text-[rgba(0,0,0,0.80)] text-lg font-medium font-inter leading-[25.20px]"
-                      >
-                        Inspiring Conversations & Connections: Austin
-                        Galentine's 2023 Recap
-                      </div>
-                      <div className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex">
-                        <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">
-                          #Updates
-                        </div>
-                      </div>
-                    </div>
+                  <div className="p-4 bg-[#f4f3fd] rounded flex-col justify-start items-start gap-4 inline-flex"> <div className="flex-col justify-start items-start gap-3 flex">   <div
+                    className="
+    text-[rgba(0,0,0,0.80)] text-lg font-medium font-inter leading-[25.20px]"   >     Inspiring Conversations & Connections: Austin
+                    Galentine's 2023 Recap
+                  </div>   <div className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex">     <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">       #Updates
+                  </div>   </div> </div>
                   </div>
-                  <div className="p-4 bg-[#f4f3fd] rounded flex-col justify-start items-start gap-4 inline-flex">
-                    <div className="flex-col justify-start items-start gap-3 flex">
-                      <div
-                        className="
-    text-[rgba(0,0,0,0.80)] text-lg font-medium font-inter leading-[25.20px]"
-                      >
-                        Inspiring Conversations & Connections: Austin
-                        Galentine's 2023 Recap
-                      </div>
-                      <div className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex">
-                        <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">
-                          #Updates
-                        </div>
-                      </div>
-                    </div>
+                  <div className="p-4 bg-[#f4f3fd] rounded flex-col justify-start items-start gap-4 inline-flex"> <div className="flex-col justify-start items-start gap-3 flex">   <div
+                    className="
+    text-[rgba(0,0,0,0.80)] text-lg font-medium font-inter leading-[25.20px]"   >     Inspiring Conversations & Connections: Austin
+                    Galentine's 2023 Recap
+                  </div>   <div className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex">     <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">       #Updates
+                  </div>   </div> </div>
                   </div>
-                  <div className="p-4 bg-[#f4f3fd] rounded flex-col justify-start items-start gap-4 inline-flex">
-                    <div className="flex-col justify-start items-start gap-3 flex">
-                      <div
-                        className="
-    text-[rgba(0,0,0,0.80)] text-lg font-medium font-inter leading-[25.20px]"
-                      >
-                        Inspiring Conversations & Connections: Austin
-                        Galentine's 2023 Recap
-                      </div>
-                      <div className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex">
-                        <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">
-                          #Updates
-                        </div>
-                      </div>
-                    </div>
+                  <div className="p-4 bg-[#f4f3fd] rounded flex-col justify-start items-start gap-4 inline-flex"> <div className="flex-col justify-start items-start gap-3 flex">   <div
+                    className="
+    text-[rgba(0,0,0,0.80)] text-lg font-medium font-inter leading-[25.20px]"   >     Inspiring Conversations & Connections: Austin
+                    Galentine's 2023 Recap
+                  </div>   <div className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex">     <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">       #Updates
+                  </div>   </div> </div>
                   </div>
                 </div>
                 <div className="flex flex-col gap-3">
-                  <div className="text-black text-xl font-HelveticaNeueCyr leading-normal">
-                    Other categories
+                  <div className="text-black text-xl font-HelveticaNeueCyr leading-normal"> Other categories
                   </div>
-                  <div className="flex flex-wrap gap-1">
-                    {tags.map((item, idx) =>
-                      idx != 0 ? (
-                        <div
-                          key={idx}
-                          className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex"
-                        >
-                          <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">
-                            #{item}
-                          </div>
-                        </div>
-                      ) : (
-                        <></>
-                      )
-                    )}
+                  <div className="flex flex-wrap gap-1"> {tags.map((item, idx) => idx != 0 ? (<div
+                    key={idx} className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex"     >       <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">         #{item}       </div>     </div>) : (<></>))}
                   </div>
                 </div>
               </article>
@@ -528,51 +349,30 @@ function ArticlePage(prop: propType) {
               </div>
               <div className="flex flex-col gap-2">
                 <div className="p-4 bg-[#f4f3fd] rounded flex-col justify-start items-start gap-4 inline-flex">
-                  <div className="flex-col justify-start items-start gap-3 flex">
-                    <div
-                      className="
-    text-[rgba(0,0,0,0.80)] text-lg font-medium font-inter leading-[25.20px]"
-                    >
-                      Inspiring Conversations & Connections: Austin Galentine's
-                      2023 Recap
-                    </div>
-                    <div className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex">
-                      <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">
-                        #Updates
-                      </div>
-                    </div>
+                  <div className="flex-col justify-start items-start gap-3 flex"> <div
+                    className="
+    text-[rgba(0,0,0,0.80)] text-lg font-medium font-inter leading-[25.20px]" >   Inspiring Conversations & Connections: Austin Galentine's
+                    2023 Recap
+                  </div> <div className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex">   <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">     #Updates
+                  </div> </div>
                   </div>
                 </div>
                 <div className="p-4 bg-[#f4f3fd] rounded flex-col justify-start items-start gap-4 inline-flex">
-                  <div className="flex-col justify-start items-start gap-3 flex">
-                    <div
-                      className="
-    text-[rgba(0,0,0,0.80)] text-lg font-medium font-inter leading-[25.20px]"
-                    >
-                      Inspiring Conversations & Connections: Austin Galentine's
-                      2023 Recap
-                    </div>
-                    <div className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex">
-                      <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">
-                        #Updates
-                      </div>
-                    </div>
+                  <div className="flex-col justify-start items-start gap-3 flex"> <div
+                    className="
+    text-[rgba(0,0,0,0.80)] text-lg font-medium font-inter leading-[25.20px]" >   Inspiring Conversations & Connections: Austin Galentine's
+                    2023 Recap
+                  </div> <div className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex">   <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">     #Updates
+                  </div> </div>
                   </div>
                 </div>
                 <div className="p-4 bg-[#f4f3fd] rounded flex-col justify-start items-start gap-4 inline-flex">
-                  <div className="flex-col justify-start items-start gap-3 flex">
-                    <div
-                      className="
-    text-[rgba(0,0,0,0.80)] text-lg font-medium font-inter leading-[25.20px]"
-                    >
-                      Inspiring Conversations & Connections: Austin Galentine's
-                      2023 Recap
-                    </div>
-                    <div className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex">
-                      <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">
-                        #Updates
-                      </div>
-                    </div>
+                  <div className="flex-col justify-start items-start gap-3 flex"> <div
+                    className="
+    text-[rgba(0,0,0,0.80)] text-lg font-medium font-inter leading-[25.20px]" >   Inspiring Conversations & Connections: Austin Galentine's
+                    2023 Recap
+                  </div> <div className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex">   <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">     #Updates
+                  </div> </div>
                   </div>
                 </div>
               </div>
@@ -581,19 +381,8 @@ function ArticlePage(prop: propType) {
                   Other categories
                 </div>
                 <div className="flex flex-wrap gap-1">
-                  {tags.map((item, idx) =>
-                    idx != 0 ? (
-                      <div
-                        key={idx}
-                        className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex"
-                      >
-                        <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">
-                          #{item}
-                        </div>
-                      </div>
-                    ) : (
-                      <></>
-                    )
+                  {tags.map((item, idx) => idx != 0 ? (<div
+                    key={idx} className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex"   >     <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">       #{item}     </div>   </div>) : (<></>)
                   )}
                 </div>
               </div>

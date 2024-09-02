@@ -2,9 +2,9 @@
 import { useEffect, useState } from "react";
 import { light, mail } from "../assets";
 import { BlogCard, BreadCrumb, Signup } from "../components";
-import blog from "../utils/blog";
+import { Blogs } from "../interfaces";
 type propType = {
-  blogs: blog[];
+  blogs: Blogs[];
   tags: string[];
 };
 function Blog(prop: propType) {
