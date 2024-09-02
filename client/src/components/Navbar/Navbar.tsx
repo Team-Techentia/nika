@@ -90,9 +90,11 @@ function Navbar() {
               Web3
             </Link> */}
           </div>
+          <Link to="/waitlist">
           <button className="w-32 btn btn3 h-12 text-center text-base font-semibold font-inter leading-tight px-4 py-[18px] rounded-lg justify-center items-center gap-2.5 lg:inline-flex hidden">
             Get Started
           </button>
+            </Link>
           <div
             className="hamburger lg:hidden"
             onClick={() => dispatcher(setNavOpen(!navOpen))}
