@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { setAlert } from "../../store/UISlice";
-import { attach_file, defImg, edit, trash, trash2 } from "../../assets";
+import {  defImg, edit, trash } from "../../assets";
 
 
 function BlogItem({ setDeletePopup }: { setDeletePopup: (data: boolean) => void }) {
@@ -66,6 +66,7 @@ function BlogItem({ setDeletePopup }: { setDeletePopup: (data: boolean) => void 
                 setFormData(res.data.raising);
             } else {
                 const res = await axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/raising/${id}`, formData);
+                console.log(res);
             }
             dispatch(setAlert({ message: 'Raising Updated successfully', type: "error" }));
         } catch (e: any) {
