@@ -60,10 +60,15 @@ function CreateNewPopup({ createPopup, setCreatePopup }: { createPopup: boolean;
 
         try {
             const thumbnailResponse = await axios.post(`https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`, data);
-
-            // const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}/raising`, { ...formData, img: thumbnailResponse.data.secure_url});
-            console.log({ ...formData, img: thumbnailResponse.data.secure_url })
-
+            console.log(thumbnailResponse.data.secure_url);
+            const { img, ...restFormData } = formData;
+            console.log(img);
+            const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}/submit`, {
+                ...restFormData,
+                coverImage: thumbnailResponse.data.secure_url ,
+              });
+            // console.log({ ...formData, img: thumbnailResponse.data.secure_url })
+            console.log(res);
             // dispatch(setAlert({ message: res.data.message, type: 'success' }))
 
             // fetchRaisings()

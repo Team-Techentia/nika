@@ -3,18 +3,18 @@ import { uploadOnCloudinary } from '../utils/cloudinary.js'; // Import the Cloud
 import { deleteImageFromCloudinary } from '../utils/cloudinary.js';
 
 const submitForm = async (req, res) => {
-  const { title, post, date, tag } = req.body;
+  const { title, post, date, tag, coverImage } = req.body;
 
   try {
-    const localFilePath = req.file.path;
-    const uploadResult = await uploadOnCloudinary(localFilePath);
+    // const localFilePath = req.file.path;
+    // const uploadResult = await uploadOnCloudinary(localFilePath);
 
-    if (!uploadResult) {
-      return res.status(500).json({ success: false, message: "Failed to upload image" });
-    }
+    // if (!uploadResult) {
+    //   return res.status(500).json({ success: false, message: "Failed to upload image" });
+    // }
 
     const newUser = new User({
-      coverImage: uploadResult.secure_url,
+      coverImage,
       title,
       post,
       date,  
