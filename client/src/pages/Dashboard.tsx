@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { CreateNewPopup, DashNav, SideNav } from "../components";
+import { useEffect } from "react";
+import { DashNav, SideNav } from "../components";
 import { RootState } from "../store/store";
 import { useSelector } from "react-redux";
 import { Blogs } from "../interfaces";
-
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
 
@@ -41,6 +41,8 @@ function Dashboard() {
   //   window.scrollTo(0, 0);
   // }, []);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, [])
@@ -49,7 +51,6 @@ function Dashboard() {
 
   console.log(blogs);
 
-  const [createPopup, setCreatePopup] = useState(false);
 
   return (
     <div className="h-screen w-full overflow-hidden relative flex bg-[#f2f2f2]">
@@ -71,7 +72,7 @@ function Dashboard() {
                   </svg>
                 </div>
               </div>
-              <div className="h-8 md:h-9 px-2 py-1.5 cursor-pointer bg-gradient-to-b from-[#4F38DC] to-[#563CF0] rounded-[36px] justify-center items-center gap-1 flex" onClick={() => setCreatePopup(!createPopup)}>
+              <div className="h-8 md:h-9 px-2 py-1.5 cursor-pointer bg-gradient-to-b from-[#4F38DC] to-[#563CF0] rounded-[36px] justify-center items-center gap-1 flex" onClick={() => navigate("/add")}>
                 <div className="px-1 justify-start items-start gap-2.5 hidden md:flex">
                   <div className="text-center text-white text-sm font-medium font-popins leading-normal">Create New </div>
                 </div>
@@ -127,11 +128,7 @@ function Dashboard() {
           </div>
         </div>
       </div>
-      {
-        createPopup && <div className="w-screen z-[100] overflow-hidden h-[100vh] flex justify-center items-center absolute bg-dark100/30 z-99">
-          <CreateNewPopup setCreatePopup={setCreatePopup} createPopup={createPopup} />
-        </div>
-      }
+      
     </div>
   )
 }

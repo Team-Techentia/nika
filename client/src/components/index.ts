@@ -8,7 +8,6 @@ import Faq from "./Faq/Faq";
 import Congratulation from "./Congratulation/Congratulation";
 import DashNav from "./Dashboard/DashNav";
 import SideNav from "./Dashboard/SideNav";
-import CreateNewPopup from "./Dashboard/CreateNewBlog";
 import Alert from "./alert/Alert";
 import FundraiserItem from "./Dashboard/BlogItem";
 import DeleteFundraiserPopup from "./Dashboard/DeleteFundraiserPopup";
@@ -27,5 +26,4 @@ export {
     Congratulation,
     DashNav,
     SideNav,
-    CreateNewPopup,
 }

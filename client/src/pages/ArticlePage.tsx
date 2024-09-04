@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { BreadCrumb, Signup } from "../components";
-import { al1, al2, al3, al4, artSoc1, artSoc2, artSoc3, artSoc4, mailWhite, } from "../assets";
+import { al1, al2, al3, al4, mailWhite, } from "../assets";
 import { useEffect, useState } from "react";
 import { Blogs } from "../interfaces";
 import axios from "axios";

@@ -7,7 +7,6 @@ import { setAlert } from '../store/UISlice';
 import { Blogs } from '../interfaces';
 import { useDispatch } from 'react-redux';
 import { defImg, edit, trash } from '../assets';
-import TinyMCE from '../components/Dashboard/TinyMCE';
 
 const App: React.FC = () => {
   const [value, setValue] = useState<string>('');

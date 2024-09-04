@@ -4,20 +4,14 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { setAlert } from "../../store/UISlice";
-import {  defImg, edit, trash } from "../../assets";
+import { defImg, edit, trash } from "../../assets";
 
 
 function BlogItem({ setDeletePopup }: { setDeletePopup: (data: boolean) => void }) {
 
     // const [user, setUser] = useState<User>({ email: '' });
 
-    const [formData, setFormData] = useState<Blogs>({
-        date: '',
-        img: null,
-        post: '',
-        tag: '',
-        title: '',
-    });
+    const [formData, setFormData] = useState<Blogs>({ thumbnail: '', title: '', category: '', readLength: '', author: '', content: '' });
 
     const { id } = useParams();
     const dispatch = useDispatch();
@@ -44,22 +38,22 @@ function BlogItem({ setDeletePopup }: { setDeletePopup: (data: boolean) => void 
 
     const updateRaising = async () => {
 
-        if (!formData.img) {
-            console.error('No img');
+        if (!formData.thumbnail) {
+            console.error('No thumbnail');
             return;
         }
 
         const data = new FormData();
         try {
-            if (typeof formData.img !== 'string') {
-                data.append("file", formData.img);
+            if (typeof formData.thumbnail !== 'string') {
+                data.append("file", formData.thumbnail);
                 data.append("upload_preset", process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET as string);
                 data.append("cloud_name", process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME as string);
 
-                const imgResponse = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`, data);
+                const thumbnailResponse = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`, data);
                 const res = await axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/raising/${id}`, {
                     ...formData,
-                    img: imgResponse.data.secure_url,
+                    thumbnail: thumbnailResponse.data.secure_url,
                     // email: user.email
                 });
 
@@ -128,19 +122,19 @@ function BlogItem({ setDeletePopup }: { setDeletePopup: (data: boolean) => void 
                     <div className="self-stretch h- rounded-lg flex-col justify-center items-center gap-3 flex">
                         <div className="h-auto xs:h-[35vw] xl:h-[400px] w-full relative overflow-hidden rounded-lg">
                             {
-                                !formData.img ? (
+                                !formData.thumbnail ? (
                                     <>
-                                        <input type="file" className="z-[2] opacity-0 h-[0px] bg-red-600 relative w-full" id="img"
-                                            accept="image/*" name="img" onChange={handleChange}
+                                        <input type="file" className="z-[2] opacity-0 h-[0px] bg-red-600 relative w-full" id="thumbnail"
+                                            accept="image/*" name="thumbnail" onChange={handleChange}
                                             onDragOver={handleDragOver} onDrop={handleDrop} />
-                                        <label htmlFor="img" className="border-dashed border-2 w-full h-[360px] border-gray-400 flex flex-col justify-center items-center gap-[39px]">
+                                        <label htmlFor="thumbnail" className="border-dashed border-2 w-full h-[360px] border-gray-400 flex flex-col justify-center items-center gap-[39px]">
                                             <img src={defImg} alt="Default Image Icon" />
                                             <p className="leading-6 text-[14px] font-popins text-[#676767] flex flex-wrap justify-center">Drag or upload your photo here</p>
                                         </label>
                                     </>
                                 ) : (
-                                    <label htmlFor="img" className="w-full h-full flex flex-col justify-center items-center gap-[39px] p-2 m-2">
-                                        <img src={typeof formData.img === 'string' ? formData.img : URL.createObjectURL(formData.img)} alt="img" />
+                                    <label htmlFor="thumbnail" className="w-full h-full flex flex-col justify-center items-center gap-[39px] p-2 m-2">
+                                        <img src={typeof formData.thumbnail === 'string' ? formData.thumbnail : URL.createObjectURL(formData.thumbnail)} alt="thumbnail" />
                                         <p className="leading-6 text-[14px] font-popins text-[#676767] flex flex-wrap justify-center">Drag or upload your photo here</p>
                                     </label>
                                 )
@@ -161,20 +155,23 @@ function BlogItem({ setDeletePopup }: { setDeletePopup: (data: boolean) => void 
                             <input type="text" id="title" name="title" value={formData.title ?? ''} onChange={handleChange} placeholder="Enter Title" className="form-input text-[14px] outline-none border-b border-[#D0D2D5] py-2.5 px-1" />
                             <label htmlFor="title" className="form-label bg-white text-[12px] font-[500]">Enter Title</label>
                         </div>
-                        <h2 className="text-black font-bold text-[21px] font-inter">Tag</h2>
+
+                        <h2 className="text-black font-bold text-[21px] font-inter">category</h2>
                         <div className="form-group h-[64px] flex justify-end flex-col relative">
-                            <input type="text" id="tag" name="tag" value={formData.tag ?? ''} onChange={handleChange} placeholder="Enter Tag" className="form-input text-[14px] outline-none border-b border-[#D0D2D5] py-2.5 px-1" />
-                            <label htmlFor="tag" className="form-label bg-white text-[12px] font-[500]">Enter Tag</label>
+                            <input type="text" id="category" name="category" value={formData.category ?? ''} onChange={handleChange} placeholder="Enter category" className="form-input text-[14px] outline-none border-b border-[#D0D2D5] py-2.5 px-1" />
+                            {/* <label htmlFor="category" className="form-label bg-white text-[12px] font-[500]">Enter category</label> */}
                         </div>
-                        <h2 className="text-black font-bold text-[21px] font-inter">Post</h2>
+
+                        <h2 className="text-black font-bold text-[21px] font-inter">author</h2>
                         <div className="form-group h-[64px] flex justify-end flex-col relative">
-                            <input type="text" id="post" name="post" value={formData.post ?? ''} onChange={handleChange} placeholder="Enter Post" className="form-input text-[14px] outline-none border-b border-[#D0D2D5] py-2.5 px-1" />
-                            <label htmlFor="post" className="form-label bg-white text-[12px] font-[500]">Enter Post</label>
+                            <input type="text" id="author" name="author" value={formData.author ?? ''} onChange={handleChange} placeholder="Enter author" className="form-input text-[14px] outline-none border-b border-[#D0D2D5] py-2.5 px-1" />
+                            {/* <label htmlFor="author" className="form-label bg-white text-[12px] font-[500]">Enter author</label> */}
                         </div>
-                        <h2 className="text-black font-bold text-[21px] font-inter">date</h2>
+
+                        <h2 className="text-black font-bold text-[21px] font-inter">readLength</h2>
                         <div className="form-group h-[64px] flex justify-end flex-col relative">
-                            <input type="date" id="date" name="date" value={formData.date ?? ''} onChange={handleChange} placeholder="Enter date" className="form-input text-[14px] outline-none border-b border-[#D0D2D5] py-2.5 px-1" />
-                            <label htmlFor="date" className="form-label bg-white text-[12px] font-[500]">Enter date</label>
+                            <input type="readLength" id="readLength" name="readLength" value={formData.readLength ?? ''} onChange={handleChange} placeholder="Enter readLength" className="form-input text-[14px] outline-none border-b border-[#D0D2D5] py-2.5 px-1" />
+                            {/* <label htmlFor="readLength" className="form-label bg-white text-[12px] font-[500]">Enter ReadLength</label> */}
                         </div>
                         <div className="self-stretch w-full justify-end items-end gap-3 inline-flex">
                             <button onClick={updateRaising} className="px-2 py-1.5 sm:w-fit w-full bg-[#e5f8f4]/70 rounded-[36px] border-2 border-[#288d7c] justify-center items-center gap-1 flex">

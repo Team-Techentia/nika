@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Alert, Congratulation, Footer, Navbar } from "./components";
-import { About, AddBlog, Article, ArticlePage, Blog, BlogUpdate, Dashboard, Error404, Home, Privacy, Terms, Waitlist, WebApp, } from "./pages";
+import { About, AddBlog, ArticlePage, Blog, BlogUpdate, Dashboard, Error404, Home, Privacy, Terms, Waitlist, WebApp, } from "./pages";
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
