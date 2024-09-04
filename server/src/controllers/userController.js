@@ -1,62 +1,59 @@
-import { User } from '../models/models.js';
-import { uploadOnCloudinary } from '../utils/cloudinary.js'; // Import the Cloudinary upload function
-import { deleteImageFromCloudinary } from '../utils/cloudinary.js';
+import { Blog } from '../models/models.js';
 
 const submitForm = async (req, res) => {
-  const { title, post, date, tag, coverImage } = req.body;
 
   try {
-    // const localFilePath = req.file.path;
-    // const uploadResult = await uploadOnCloudinary(localFilePath);
+    const newBlog = new Blog(req.body);
 
-    // if (!uploadResult) {
-    //   return res.status(500).json({ success: false, message: "Failed to upload image" });
-    // }
+    console.log(req.body)
 
-    const newUser = new User({
-      coverImage,
-      title,
-      post,
-      date,  
-      tag  
-    });
+    const response = await newBlog.save();
 
-    await newUser.save();
+    console.log(response)
 
-    res.status(201).json({ success: true, message: "User data saved successfully!" });
+    res.status(201).json({ success: true, message: "Blog data saved successfully!" });
   } catch (error) {
-    res.status(500).json({ success: false, message: "Error saving user data", error });
+    res.status(500).json({ success: false, message: "Error saving Blog data", error: error.message.split(":").pop() || error.message });
   }
 };
 
 const fetchEntries = async (req, res) => {
   try {
-    const entries = await User.find();
-    res.status(200).json({ success: true, data: entries });
+    const blogs = await Blog.find();
+
+    res.status(200).json({ success: true, blogs });
   } catch (error) {
-    res.status(500).json({ success: false, message: "Error fetching entries", error });
+    res.status(500).json({ success: false, message: "Error fetching blogs", error });
   }
 };
 
+export const fetchEntry = async (req, res) => {
+  try {
+    const blog = await Blog.findById(req.params.id);
+
+    res.status(200).json({ success: true, blog });
+    console.log(blog)
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Error fetching blog", error });
+  }
+};
 
 const deleteEntry = async (req, res) => {
   const { id } = req.params;
 
   try {
-      // Find the entry by ID
-      const entry = await User.findById(id);
+    // Find the entry by ID
+    const entry = await Blog.findById(id);
 
-      if (!entry) {
-          return res.status(404).json({ success: false, message: "Entry not found" });
-      }
+    if (!entry) {
+      return res.status(404).json({ success: false, message: "Entry not found" });
+    }
 
-      await deleteImageFromCloudinary(entry.coverImage);
+    await Blog.findByIdAndDelete(id);
 
-      await User.findByIdAndDelete(id);
-
-      res.status(200).json({ success: true, message: "Entry deleted successfully!" });
+    res.status(200).json({ success: true, message: "Entry deleted successfully!" });
   } catch (error) {
-      res.status(500).json({ success: false, message: "Error deleting entry", error });
+    res.status(500).json({ success: false, message: "Error deleting entry", error });
   }
 };
 

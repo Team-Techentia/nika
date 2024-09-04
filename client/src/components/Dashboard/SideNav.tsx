@@ -57,7 +57,7 @@ function SideNav() {
                         </div>
                     </div>
                 </Link>
-                <Link to="/profile" className={`group self-stretch rounded justify-start items-center gap-2 inline-flex border ${isActiveLink('/profile') ? `border-[#D0D0D0] text-black p-[12px_13px]` : 'border-transparent p-[12px_13px] text-[#ababab]'}`}>
+                <Link to="/add" className={`group self-stretch rounded justify-start items-center gap-2 inline-flex border ${isActiveLink('/add') ? `border-[#D0D0D0] text-black p-[12px_13px]` : 'border-transparent p-[12px_13px] text-[#ababab]'}`}>
                     <div className="w-5 h-5 relative" >
                         <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.00289 7.16653C6.66234 7.16653 7.30698 6.97098 7.85529 6.60461C8.40361 6.23824 8.83097 5.7175 9.08333 5.10825C9.33569 4.499 9.40172 3.82859 9.27306 3.18181C9.14441 2.53503 8.82686 1.94093 8.36055 1.47462C7.89425 1.00832 7.30015 0.690767 6.65337 0.562115C6.00659 0.433462 5.33618 0.499492 4.72693 0.751852C4.11768 1.00421 3.59694 1.43157 3.23057 1.97988C2.8642 2.5282 2.66865 3.17284 2.66865 3.83229C2.66865 4.71659 3.01993 5.56466 3.64523 6.18995C4.27052 6.81525 5.11859 7.16653 6.00289 7.16653ZM6.00289 2.16517C6.33261 2.16517 6.65494 2.26294 6.92909 2.44613C7.20325 2.62931 7.41693 2.88968 7.54311 3.19431C7.66929 3.49894 7.7023 3.83414 7.63798 4.15753C7.57365 4.48092 7.41487 4.77797 7.18172 5.01112C6.94857 5.24427 6.65152 5.40305 6.32813 5.46738C6.00474 5.5317 5.66954 5.49869 5.36491 5.37251C5.06028 5.24633 4.79992 5.03265 4.61673 4.75849C4.43354 4.48433 4.33577 4.16201 4.33577 3.83229C4.33577 3.39014 4.51141 2.9661 4.82406 2.65346C5.1367 2.34081 5.56074 2.16517 6.00289 2.16517Z" fill={`${isActiveLink('/profile') ? `black` : '#D0D0D0'}`} />
@@ -67,7 +67,7 @@ function SideNav() {
                     </div>
                     <div className="px-2 py-1.5 justify-center items-center gap-1 lg:flex hidden">
                         <div className="px-1 justify-start items-start gap-2.5 flex">
-                            <div className="text-center text-sm font-medium font-inter leading-normal">Profile</div>
+                            <div className="text-center text-sm font-medium font-inter leading-normal">Add new</div>
                         </div>
                     </div>
                 </Link>

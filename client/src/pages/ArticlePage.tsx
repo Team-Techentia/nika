@@ -1,25 +1,40 @@
 import { useParams } from "react-router-dom";
 import { BreadCrumb, Signup } from "../components";
 import { al1, al2, al3, al4, artSoc1, artSoc2, artSoc3, artSoc4, mailWhite, } from "../assets";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Blogs } from "../interfaces";
+import axios from "axios";
 
-type propType = {
-  blogs: Blogs[];
-  tags: string[];
-};
+function ArticlePage() {
 
-function ArticlePage(prop: propType) {
+  const { id} = useParams();
 
-  const { blogs, tags } = prop;
-  const { title } = useParams();
+  const [blog,setBlog] = useState<Blogs>({ thumbnail: "",    title: "",  category: "",    createdAt:  "", readLength: "", author: "",  updatedAt: "",    _id: "",    content: ""})
 
-  const blog = blogs[0];
-  console.log(blog, title);
+  const fetchBlog = async () => {
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/blogs/${id}`);
+      setBlog(res.data.blog);
+
+    } catch (e: any) {
+      console.log(e)
+    }
+  }
+
+  const tags: string[] = [
+    "All",
+    "Tag",
+    "DeFi Tutorials",
+    "Insights",
+    "Updates",
+    "Investment Strategies",
+  ];
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+
+    fetchBlog()
+  },[]);
 
   return (
     <>
@@ -65,14 +80,14 @@ function ArticlePage(prop: propType) {
             </article>
             <div className="flex flex-col w-full gap-5 lg:w-[576px]">
               <div className="w-full" id="digital-finance">
-                <img src={blog.img || ''} className="w-full h-[307px]" alt="" />
+                <img src={blog.thumbnail || ''} className="w-full h-[307px]" alt="" />
               </div>
               <div
                 id="#ledgers"
                 className="px-2 w-fit py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 flex"
               >
                 <div className="text-white text-xs font-medium font-inter leading-[18px]">
-                  #{blog.tag}
+                  #{blog.category}
                 </div>
               </div>
               <div className="text-[#070707] sm:text-[42px] text-[28px] font-HelveticaNeueCyr leading-[42px] font-[550]">
@@ -82,14 +97,14 @@ function ArticlePage(prop: propType) {
                 <div className="sm:col-span-2">
                   <div className="text-[rgba(0,0,0,0.56)] text-sm font-normal font-ibm leading-tight"> Author
                   </div>
-                  <div className="text-black text-lg font-medium font-ibm leading-[25.20px]"> Abby Massey
+                  <div className="text-black text-lg font-medium font-ibm leading-[25.20px]"> {blog.author}
                   </div>
                 </div>
                 <div className="">
                   <div className="text-[rgba(0,0,0,0.56)] text-sm font-normal font-ibm leading-tight"> Read
                   </div>
 
-                  <div className="text-black text-lg font-medium font-ibm leading-[25.20px]"> 8 min
+                  <div className="text-black text-lg font-medium font-ibm leading-[25.20px]">{blog.readLength}
                   </div>
                 </div>
                 <div className="">
@@ -135,7 +150,9 @@ function ArticlePage(prop: propType) {
                   </button>
                 </div>
               </article>
-              <div className="xs:py-8 py-4 flex flex-col gap-4 w-full">
+              <div className="" dangerouslySetInnerHTML={{ __html: blog.content }}>
+              </div>
+              {/* <div className="xs:py-8 py-4 flex flex-col gap-4 w-full">
                 <div className="text-[rgba(7,7,7,0.72)] text-base font-normal font-inter leading-normal tracking-[-0.08px]">
                   In an era where digital innovation reshapes landscapes
                   overnight, the finance sector is no exception. The swift
@@ -339,7 +356,7 @@ function ArticlePage(prop: propType) {
                     key={idx} className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 inline-flex"     >       <div className="text-center text-white text-xs font-medium font-inter leading-[18px]">         #{item}       </div>     </div>) : (<></>))}
                   </div>
                 </div>
-              </article>
+              </article> */}
             </div>
             <article className="w-[280px] lg:flex hidden flex-col gap-8 ">
               <div className="flex flex-col gap-3 w-full">

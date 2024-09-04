@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { BlogCard, BreadCrumb, Signup } from "../components";
 import { Blogs } from "../interfaces";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 type propType = {
   blogs: Blogs[];
@@ -9,6 +11,13 @@ type propType = {
 
 function Article(prop: propType) {
   const { blogs } = prop;
+
+  const { id} = useParams();
+
+  console.log(id)
+
+  // const [blog,setBlog] = useState<Blogs>({})
+
   const tags: string[] = [
     "All",
     "#teg",
@@ -19,10 +28,28 @@ function Article(prop: propType) {
     "#Updates",
     "#InvestmentStrategies",
   ];
+
+  const fetchBlog = async () => {
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/blogs/${id}`);
+
+      console.log(res.data.blogs)
+
+      // setBlog(res.data.blogs);
+    } catch (e: any) {
+      console.log(e)
+    }
+
+  }
+
   const [selectTag, setSelecttag] = useState("#InvestmentStrategies");
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    fetchBlog()
   });
+
   return (
     <>
       <BreadCrumb />

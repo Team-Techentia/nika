@@ -4,7 +4,6 @@ type blog = {
     date?:string,
     tag?:string,
     post?:string
-    
-
 }
+
 export default blog

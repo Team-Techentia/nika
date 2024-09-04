@@ -1,16 +1,27 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, model } from 'mongoose';
 
-const userSchema = new Schema(
-  {
-    coverImage : { type: String },
-    title: { type: String, required: [true, "Enter title"] },
-    post: { type: String, required: [true, "Enter description"] },
-    date: { type: String },   
-    tag: { type: String } 
-  },
-  {
-    timestamps: true,
-  }
-);
+// const contentBlockSchema = new Schema({
+//   type: {
+//     type: String,
+//     enum: ['heading', 'highlightedText', 'text', 'image'],
+//     required: [true,"Please specify type of content"],
+//   },
+//   content: { type: String, required: [true,"Please enter content"] }
+// });
 
-export const User = mongoose.model("User", userSchema);
+// const sectionSchema = new Schema({
+//   content: [contentBlockSchema]
+// })
+
+const blogSchema = new Schema({
+  thumbnail: { type: String,required:[true,"Please Enter blog Thumbnail"] },
+  title: { type: String, required: [true,"Please enter blog Title"], },
+  category: { type: String },
+  createdAt: { type: Date, default: Date.now, },
+  readLength: { type: String },
+  author: { type: String, required: [true,"Please enter Author name"], },
+  updatedAt: { type: Date, default: Date.now, },
+  content: { type: String, required: [true, "Please enter blog content"] },
+});
+
+export const Blog = model('Blog', blogSchema);

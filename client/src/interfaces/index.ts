@@ -1,8 +1,11 @@
 export interface Blogs {
-    img?: null | string;
-    title?: string;
-    post?: string;
-    tag?: string;
-    date?: string;
+    thumbnail: string | null,
+    title: string,
+    category: string,
+    createdAt?:  string,
+    readLength: string,
+    author: string,
+    updatedAt?: string,
+    _id?: string,
+    content: string
 }
-  

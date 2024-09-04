@@ -3,15 +3,19 @@ import Lottie from "lottie-react";
 import { Signup } from "../components";
 import { useEffect } from "react";
 import { Link } from 'react-router-dom';
+
 type proptype = {
   setCongrats: React.Dispatch<React.SetStateAction<boolean>>;
   congrats: boolean;
 };
 function Home(prop: proptype) {
+
   const { congrats, setCongrats } = prop;
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
   return (
     <>
       <div className="relative overflow-visible max-w-[100%] lg:h-[676px] h-[552px] ">

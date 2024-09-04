@@ -52,7 +52,7 @@ function Blog(prop: propType) {
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
               {selectTag !== "All"
                 ? blogs
-                    .filter((blog) => selectTag === blog.tag)
+                    .filter((blog) => selectTag === blog.category)
                     .map((blog, ind) => <BlogCard data={blog} key={ind} />)
                 : blogs.map((blog, ind) => <BlogCard data={blog} key={ind} />)}
             </div>

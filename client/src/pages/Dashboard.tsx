@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { CreateNewPopup, DashNav, SideNav } from "../components";
+import { RootState } from "../store/store";
+import { useSelector } from "react-redux";
+import { Blogs } from "../interfaces";
 
 
 function Dashboard() {
@@ -41,6 +44,10 @@ function Dashboard() {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, [])
+
+  const blogs: Blogs[] = useSelector((state: RootState) => state.main.blogs);
+
+  console.log(blogs);
 
   const [createPopup, setCreatePopup] = useState(false);
 

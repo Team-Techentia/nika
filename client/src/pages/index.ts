@@ -10,8 +10,10 @@ import WebApp from "./WebApp";
 import ArticlePage from "./ArticlePage";
 import Dashboard from "./Dashboard";
 import BlogUpdate from "./BlogUpdate";
+import AddBlog from "./AddBlog";
 
 export {
+    AddBlog,
     About,
     Article,
     Blog,
