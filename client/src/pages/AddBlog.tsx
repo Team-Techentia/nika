@@ -5,13 +5,20 @@ import { DashNav, SideNav } from '../components';
 import axios from 'axios';
 import { setAlert } from '../store/UISlice';
 import { Blogs } from '../interfaces';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { defImg, edit, trash } from '../assets';
+import { useNavigate } from 'react-router-dom';
+import { setBlogs } from '../store/slices';
+import { RootState } from '../store/store';
 
 const App: React.FC = () => {
   const [value, setValue] = useState<string>('');
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const blogs = useSelector((state: RootState) => state.main.blogs)
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type, files } = e.target as HTMLInputElement | HTMLSelectElement & { files?: FileList };
@@ -24,6 +31,8 @@ const App: React.FC = () => {
   }
 
   const handleSubmit = async () => {
+
+    setIsSubmitting(true);
 
     if (!formData.thumbnail) {
       dispatch(setAlert({ message: 'No Thumbnail', type: 'warning' }))
@@ -44,23 +53,25 @@ const App: React.FC = () => {
       const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/submit`, {
         ...restFormData,
         thumbnail: thumbnailResponse.data.secure_url,
-        content:value
+        content: value
       });
 
-      console.log({ ...formData, thumbnail: thumbnailResponse.data.secure_url ,content:value})
-      console.log(res);
       dispatch(setAlert({ message: res.data.message, type: 'success' }))
 
+      dispatch(setBlogs([...blogs, res.data.blog]))
       // fetchRaisings()
+
+      navigate("/dashboard");
 
       setFormData({ thumbnail: '', title: '', category: '', readLength: '', author: '', content: '' })
 
     } catch (e: any) {
-      dispatch(setAlert({ message: e.response.data.message, type: 'warning' }))
+      dispatch(setAlert({ message: e.response.data.error, type: 'warning' }))
       console.log(e)
     }
     finally {
       setTimeout(() => dispatch(setAlert({ message: '', type: 'info' })), 1200)
+      setIsSubmitting(false);
     }
   };
 
@@ -214,9 +225,7 @@ const App: React.FC = () => {
             }
           </div>
 
-          <div className=" px-2 py-1.5 cursor-pointer bg-gradient-to-b from-[#4F38DC] to-[#563CF0] rounded-[36px] justify-center items-center gap-1 flex" onClick={handleSubmit}>
-            <div className="text-center text-white text-sm font-medium font-popins leading-normal">Submit</div>
-          </div>
+          <button className="text-center text-white text-sm font-medium font-popins px-2 py-1.5 bg-gradient-to-b from-[#4F38DC] to-[#563CF0] rounded-[36px]" onClick={handleSubmit} disabled={isSubmitting}>Submit</button>
 
         </div>
 

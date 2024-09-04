@@ -1,11 +1,13 @@
 import axios from "axios";
 import { setAlert } from "../../store/UISlice";
 import { useNavigate, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cross } from "../../assets";
+import { setBlogs } from "../../store/slices";
+import { RootState } from "../../store/store";
 
 
-function DeleteFundraiserPopup({ setDeletePopup }: { setDeletePopup: (data: boolean) => void }) {
+function DeleteBlogPopup({ setDeletePopup }: { setDeletePopup: (data: boolean) => void }) {
 
     // const [user, setUser] = useState<User>({ email: '' });
 
@@ -21,19 +23,19 @@ function DeleteFundraiserPopup({ setDeletePopup }: { setDeletePopup: (data: bool
     const navigate = useNavigate();
     const { id } = useParams();
 
-    // const userFundRaisings = useSelector((state: RootState) => state.main.userFundRaisings)
+    const blogs = useSelector((state: RootState) => state.main.blogs)
 
     const deleteRaising = async () => {
         try {
-            const res = await axios.delete(`${process.env.NEXT_PUBLIC_SERVER_URL}/raising/${id}`);
+            const res = await axios.delete(`${import.meta.env.VITE_SERVER_URL}/api/blogs/${id}`);
 
             // setDeletePopup(false)
             console.log(res.data)
 
-        navigate('/fundraisers')
+            navigate('/dashboard')
 
             dispatch(setAlert({ message: 'Raising deleted successfully', type: "error" }));
-            // dispatch(setUserFundraisings(userFundRaisings.filter(item => item.id !== id)))
+            dispatch(setBlogs(blogs.filter(item => item._id !== id)))
 
 
         } catch (e: any) {
@@ -70,4 +72,4 @@ function DeleteFundraiserPopup({ setDeletePopup }: { setDeletePopup: (data: bool
 
 }
 
-export default DeleteFundraiserPopup;
+export default DeleteBlogPopup;

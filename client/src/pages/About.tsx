@@ -32,7 +32,7 @@ function About() {
                   <img src={book} alt="Book" />
                 </div>
                 <div className="flex flex-col items-start gap-2">
-                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     Our Mission
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -48,7 +48,7 @@ function About() {
                   <img src={light} alt="Light" />
                 </div>
                 <div className="flex flex-col items-start gap-2">
-                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     Our Vision
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -84,7 +84,7 @@ function About() {
                     <img src={cloud} alt="Cloud" />
                   </div>
                   <div className="flex flex-col items-start gap-2">
-                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     Experienced Leadership
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -97,7 +97,7 @@ function About() {
                     <img src={cloud} alt="Cloud" />
                   </div>
                   <div className="flex flex-col items-start gap-2">
-                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     Cutting-Edge Technology
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -110,7 +110,7 @@ function About() {
                     <img src={cloud} alt="Cloud" />
                   </div>
                   <div className="flex flex-col items-start gap-2">
-                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     Strategic Advisors and Collaborators
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">

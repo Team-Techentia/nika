@@ -60,7 +60,7 @@ function Home(prop: proptype) {
                   <img src={book} alt="Book" />
                 </div>
                 <div className="flex flex-col items-start gap-2">
-                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     Vision Statement
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -73,7 +73,7 @@ function Home(prop: proptype) {
                   <img src={light} alt="Light" />
                 </div>
                 <div className="flex flex-col items-start gap-2">
-                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     Mission Statement
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -86,7 +86,7 @@ function Home(prop: proptype) {
                   <img src={award} alt="Award" />
                 </div>
                 <div className="flex flex-col items-start gap-2">
-                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     Impact and Goals
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -114,7 +114,7 @@ function Home(prop: proptype) {
                 <div className="sm:h-[inherit] sm:w-[1px] sm:block hidden bg-[rgba(7,7,7,0.20)]"></div>
                 <div className="flex sm:w-[50%] items-center sm:border-t-0 pb-8">
                   <div className="flex flex-col justify-start gap-2">
-                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                       Crypto Asset Indices
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.72)] font-inter">
@@ -126,7 +126,7 @@ function Home(prop: proptype) {
               <div className="flex sm:flex-row flex-col-reverse gap-x-5 gap-y-[17.5px]  border-t-[1px] border-[rgba(7,7,7,0.20)]">
                 <div className="flex sm:w-[50%] items-center pb-8">
                   <div className="flex flex-col justify-start gap-2">
-                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                       Real-World Asset (RWA) Products
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.72)] font-inter">
@@ -152,7 +152,7 @@ function Home(prop: proptype) {
 
                 <div className="flex sm:w-[50%] items-center pb-8">
                   <div className="flex flex-col justify-start gap-2">
-                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                       Yield and Trading Products
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.72)] font-inter">
@@ -164,7 +164,7 @@ function Home(prop: proptype) {
               <div className="flex sm:flex-row flex-col-reverse gap-x-5 gap-y-[17.5px]  border-t-[1px] border-b-[1px] border-[rgba(7,7,7,0.20)]">
                 <div className="flex sm:w-[50%] items-center pb-8">
                   <div className="flex flex-col justify-start gap-2">
-                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                       Arbitrage & Quant Strategies
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.72)] font-inter">
@@ -198,7 +198,7 @@ function Home(prop: proptype) {
                   <img src={code} alt="Code Box" />
                 </div>
                 <div className="flex flex-col items-start gap-2">
-                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     Robust On-Chain Asset Custody
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -211,7 +211,7 @@ function Home(prop: proptype) {
                   <img src={shield} alt="Shield" />
                 </div>
                 <div className="flex flex-col items-start gap-2">
-                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     Expert Due Diligence
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -272,7 +272,7 @@ function Home(prop: proptype) {
                     <img src={cloud} alt="Cloud" />
                   </div>
                   <div className="flex flex-col items-start gap-2">
-                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                       Institutional Grade Security
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -285,7 +285,7 @@ function Home(prop: proptype) {
                     <img src={coin} alt="Coin" />
                   </div>
                   <div className="flex flex-col items-start gap-2">
-                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                       Investor Centric Approach
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -298,7 +298,7 @@ function Home(prop: proptype) {
                     <img src={shield2} alt="Shield 2" />
                   </div>
                   <div className="flex flex-col items-start gap-2">
-                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                       Easily Accessible
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">

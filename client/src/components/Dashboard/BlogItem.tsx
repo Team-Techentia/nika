@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { setAlert } from "../../store/UISlice";
 import { defImg, edit, trash } from "../../assets";
+import { Editor } from "@tinymce/tinymce-react";
 
 
 function BlogItem({ setDeletePopup }: { setDeletePopup: (data: boolean) => void }) {
@@ -15,28 +16,27 @@ function BlogItem({ setDeletePopup }: { setDeletePopup: (data: boolean) => void 
 
     const { id } = useParams();
     const dispatch = useDispatch();
+    
+        const fetchBlog = async () => {
+            try {
+                const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/blogs/${id}`);
+                setFormData(res.data.blog);
+            } catch (e: any) {
+                dispatch(setAlert({ message: e.response.data.message, type: "error" }));
+            }
+        };
 
     useEffect(() => {
-        const userData = localStorage.getItem('credentials');
-        if (userData) {
-            // setUser(JSON.parse(userData));
-        }
+        // const userData = localStorage.getItem('credentials');
+        // if (userData) {
+        //     setUser(JSON.parse(userData));
+        // }
 
+        fetchBlog();
         window.scrollTo(0, 0);
-        fetchRaising();
     }, []);
 
-    const fetchRaising = async () => {
-        try {
-            // const res = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/raising/${id}`);
-            // setFormData(res.data.raising);
-        } catch (e: any) {
-            dispatch(setAlert({ message: e.response.data.message, type: "error" }));
-            console.error(e);
-        }
-    };
-
-    const updateRaising = async () => {
+    const updateBlog = async () => {
 
         if (!formData.thumbnail) {
             console.error('No thumbnail');
@@ -47,25 +47,25 @@ function BlogItem({ setDeletePopup }: { setDeletePopup: (data: boolean) => void 
         try {
             if (typeof formData.thumbnail !== 'string') {
                 data.append("file", formData.thumbnail);
-                data.append("upload_preset", process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET as string);
-                data.append("cloud_name", process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME as string);
+                data.append("upload_preset", import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET as string);
+                data.append("cloud_name", import.meta.env.VITE_CLOUDINARY_CLOUD_NAME as string);
 
-                const thumbnailResponse = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`, data);
-                const res = await axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/raising/${id}`, {
+                const thumbnailResponse = await axios.post(`https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`, data);
+                const res = await axios.put(`${import.meta.env.VITE_SERVER_URL}/api/blogs/${id}`, {
                     ...formData,
                     thumbnail: thumbnailResponse.data.secure_url,
                     // email: user.email
                 });
-
-                setFormData(res.data.raising);
+                console.log(res)
+                setFormData(res.data.blog);
             } else {
-                const res = await axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/raising/${id}`, formData);
+                const res = await axios.put(`${import.meta.env.VITE_SERVER_URL}/api/blogs/${id}`, formData);
                 console.log(res);
             }
-            dispatch(setAlert({ message: 'Raising Updated successfully', type: "error" }));
+            dispatch(setAlert({ message: 'blog Updated successfully', type: "success" }));
         } catch (e: any) {
             dispatch(setAlert({ message: e.response.data.message, type: "error" }));
-            console.error(e.response.data);
+            console.log(e.response.data);
         } finally {
             setTimeout(() => dispatch(setAlert({ message: '', type: "error" })), 1200);
         }
@@ -81,29 +81,62 @@ function BlogItem({ setDeletePopup }: { setDeletePopup: (data: boolean) => void 
         }
     };
 
-    const clearimg = () => {
-        setFormData((p: any) => ({ ...p, img: null }));
-        const imgInput = document.getElementById("img") as HTMLInputElement;
-        if (imgInput) {
-            imgInput.value = '';
-        }
-    };
+    const { thumbnail } = formData;
 
-    const handleDragOver = (e: React.DragEvent) => {
+    const handleDragOver = (e: any) => {
         e.preventDefault();
         e.stopPropagation();
     };
 
-    const handleDrop = (e: React.DragEvent) => {
+    const handleDrop = (e: any) => {
         e.preventDefault();
         e.stopPropagation();
         const file = e.dataTransfer.files[0];
         const dataTransfer = new DataTransfer();
         dataTransfer.items.add(file);
-        const imgInput = document.getElementById("img") as HTMLInputElement;
-        if (imgInput) {
-            imgInput.files = dataTransfer.files;
-        }
+        (document.getElementById("thumbnail") as HTMLInputElement).files = dataTransfer.files;
+    };
+
+    const clearThumbnail = () => {
+        (document.getElementById("thumbnail") as HTMLInputElement).files = null
+        setFormData((p: any) => ({ ...p, thumbnail: null }))
+    }
+
+    const handleEditorChange = (content: string) => {
+        setFormData({...formData,content});
+    };
+
+    const cloudinaryUpload = (blobInfo: any, progress: (percent: number) => void): Promise<string> => {
+        return new Promise((resolve, reject) => {
+            const formData = new FormData();
+            formData.append('file', blobInfo.blob());
+            formData.append('upload_preset', import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET as string); // Your Cloudinary upload preset
+            formData.append('cloud_name', import.meta.env.VITE_CLOUDINARY_CLOUD_NAME as string); // Your Cloudinary cloud name
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`, true);
+
+            // Track upload progress
+            xhr.upload.onprogress = (event) => {
+                if (event.lengthComputable) {
+                    const percentComplete = (event.loaded / event.total) * 100;
+                    progress(Math.round(percentComplete)); // Report progress to TinyMCE
+                }
+            };
+
+            // Handle success or failure
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    resolve(response.secure_url); // Return the uploaded image URL to TinyMCE
+                } else {
+                    reject('Image upload failed');
+                }
+            };
+
+            xhr.onerror = () => reject('Image upload failed');
+            xhr.send(formData);
+        });
     };
 
 
@@ -119,62 +152,84 @@ function BlogItem({ setDeletePopup }: { setDeletePopup: (data: boolean) => void 
                     </Link>
                 </div>
                 <div className="max-w-[793px] w-[100%] xlg:p-4 md:p-3 p-2.5 bg-white rounded-lg border border-[#d0d0d0] flex-col justify-start items-start gap-5 inline-flex">
-                    <div className="self-stretch h- rounded-lg flex-col justify-center items-center gap-3 flex">
-                        <div className="h-auto xs:h-[35vw] xl:h-[400px] w-full relative overflow-hidden rounded-lg">
-                            {
-                                !formData.thumbnail ? (
-                                    <>
-                                        <input type="file" className="z-[2] opacity-0 h-[0px] bg-red-600 relative w-full" id="thumbnail"
-                                            accept="image/*" name="thumbnail" onChange={handleChange}
-                                            onDragOver={handleDragOver} onDrop={handleDrop} />
-                                        <label htmlFor="thumbnail" className="border-dashed border-2 w-full h-[360px] border-gray-400 flex flex-col justify-center items-center gap-[39px]">
+                    <div className="self-stretch flex-col justify-start items-start gap-5 flex">
+
+                        <div className="relative w-full">
+                            <input type="file" className="z-[2] opacity-0 h-[260px] md:h-[360px] relative w-[100%]" id="thumbnail" accept="image/*" name="thumbnail" onChange={handleChange} onDragOver={handleDragOver} onDrop={handleDrop} />
+                            <div className="flex w-[100%] z-[1] absolute top-0">
+                                {
+                                    !thumbnail ?
+                                        <label htmlFor="thumbnail" className="border-dashed border-2 w-[100%] h-[260px] md:h-[360px] border-gray-400 flex flex-col justify-center items-center gap-[39px]" >
                                             <img src={defImg} alt="Default Image Icon" />
-                                            <p className="leading-6 text-[14px] font-popins text-[#676767] flex flex-wrap justify-center">Drag or upload your photo here</p>
-                                        </label>
-                                    </>
-                                ) : (
-                                    <label htmlFor="thumbnail" className="w-full h-full flex flex-col justify-center items-center gap-[39px] p-2 m-2">
-                                        <img src={typeof formData.thumbnail === 'string' ? formData.thumbnail : URL.createObjectURL(formData.thumbnail)} alt="thumbnail" />
-                                        <p className="leading-6 text-[14px] font-popins text-[#676767] flex flex-wrap justify-center">Drag or upload your photo here</p>
-                                    </label>
-                                )
+                                            <p className="leading-6 text-[14px] font-popins text-[#676767] flex flex-wrap justify-center">
+                                                Drag or upload your photo here
+                                            </p>
+                                        </label> :
+                                        <div className="rounded-lg w-[100%] h-[260px] md:h-[360px] border-gray-400 flex flex-col justify-center items-center gap-[39px]">
+                                            <img src={typeof formData.thumbnail === 'string'?formData.thumbnail:URL.createObjectURL(formData.thumbnail as any)} className="rounded-lg bg-contain w-[100%] h-[100%]" alt="Preview Image" />
+                                        </div>
+                                }
+                            </div>
+                            {
+                                thumbnail &&
+                                <div className="flex justify-between pt-2 px-1.5">
+                                    <img src={edit} alt='Edit' onClick={clearThumbnail} />
+                                    <img src={trash} alt='Trash' onClick={clearThumbnail} />
+                                </div>
                             }
                         </div>
-                        <div className="self-stretch px-1.5 justify-between items-start inline-flex">
-                            <div className="w-5 h-5 relative">
-                                <img src={trash} alt="Trash" onClick={clearimg} />
-                            </div>
-                            <div className="w-5 h-5 relative">
-                                <img src={edit} alt="Edit" onClick={clearimg} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="self-stretch flex-col justify-start items-start gap-5 flex">
+
                         <h2 className="text-black font-bold text-[21px] font-inter">Title</h2>
-                        <div className="form-group h-[64px] flex justify-end flex-col relative">
+                        <div className="form-group flex justify-end flex-col relative">
                             <input type="text" id="title" name="title" value={formData.title ?? ''} onChange={handleChange} placeholder="Enter Title" className="form-input text-[14px] outline-none border-b border-[#D0D2D5] py-2.5 px-1" />
-                            <label htmlFor="title" className="form-label bg-white text-[12px] font-[500]">Enter Title</label>
+                            {/* <label htmlFor="title" className="form-label bg-white text-[12px] font-[500]">Enter Title</label> */}
                         </div>
 
                         <h2 className="text-black font-bold text-[21px] font-inter">category</h2>
-                        <div className="form-group h-[64px] flex justify-end flex-col relative">
+                        <div className="form-group flex justify-end flex-col relative">
                             <input type="text" id="category" name="category" value={formData.category ?? ''} onChange={handleChange} placeholder="Enter category" className="form-input text-[14px] outline-none border-b border-[#D0D2D5] py-2.5 px-1" />
                             {/* <label htmlFor="category" className="form-label bg-white text-[12px] font-[500]">Enter category</label> */}
                         </div>
 
                         <h2 className="text-black font-bold text-[21px] font-inter">author</h2>
-                        <div className="form-group h-[64px] flex justify-end flex-col relative">
+                        <div className="form-group flex justify-end flex-col relative">
                             <input type="text" id="author" name="author" value={formData.author ?? ''} onChange={handleChange} placeholder="Enter author" className="form-input text-[14px] outline-none border-b border-[#D0D2D5] py-2.5 px-1" />
                             {/* <label htmlFor="author" className="form-label bg-white text-[12px] font-[500]">Enter author</label> */}
                         </div>
 
                         <h2 className="text-black font-bold text-[21px] font-inter">readLength</h2>
-                        <div className="form-group h-[64px] flex justify-end flex-col relative">
+                        <div className="form-group flex justify-end flex-col relative">
                             <input type="readLength" id="readLength" name="readLength" value={formData.readLength ?? ''} onChange={handleChange} placeholder="Enter readLength" className="form-input text-[14px] outline-none border-b border-[#D0D2D5] py-2.5 px-1" />
                             {/* <label htmlFor="readLength" className="form-label bg-white text-[12px] font-[500]">Enter ReadLength</label> */}
                         </div>
+
+                        <div className="h-screen">
+
+                            <Editor
+                                apiKey={import.meta.env.VITE_TINY_API_KEY}
+                                value={formData.content}
+                                init={{
+                                    height: 500,
+                                    menubar: true,
+                                    a11y_advanced_options: true,
+                                    plugins: [
+                                        'advlist autolink lists link image charmap preview anchor',
+                                        'searchreplace visualblocks code fullscreen',
+                                        'insertdatetime media table paste code help wordcount'
+                                    ],
+                                    toolbar:
+                                        'undo redo | formatselect | bold italic backcolor | ' +
+                                        'alignleft aligncenter alignright alignjustify | ' +
+                                        'bullist numlist outdent indent | removeformat | help | image',
+                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px } img {display:block; max-width: 100%; height: 370px; }',
+                                    images_upload_handler: (blobInfo, progress) => cloudinaryUpload(blobInfo, progress),
+                                }}
+                                onEditorChange={handleEditorChange}
+                            />
+                        </div>
+
                         <div className="self-stretch w-full justify-end items-end gap-3 inline-flex">
-                            <button onClick={updateRaising} className="px-2 py-1.5 sm:w-fit w-full bg-[#e5f8f4]/70 rounded-[36px] border-2 border-[#288d7c] justify-center items-center gap-1 flex">
+                            <button onClick={updateBlog} className="px-2 py-1.5 sm:w-fit w-full bg-[#e5f8f4]/70 rounded-[36px] border-2 border-[#288d7c] justify-center items-center gap-1 flex">
                                 <div className="justify-start items-start gap-2.5 flex">
                                     <div className="text-center text-[#288d7c] text-sm font-medium font-['Poppins'] leading-normal">Save changes</div>
                                 </div>

@@ -64,10 +64,10 @@ function App() {
             <Route path="/terms" element={<><Navbar /><Terms /><Footer /> </>} />
             <Route path="/waitlist" element={<><Navbar /><Waitlist /><Footer /> </>} />
             <Route path="/webapp" element={<><Navbar /><WebApp /><Footer /> </>} />
-            <Route path="*" element={<><Navbar /><Error404 /><Footer /> </>} />
             <Route path="/dashboard" element={<><Dashboard /> </>} />
             <Route path="/add" element={<><AddBlog /> </>} />
             <Route path="/blogs/:id" element={<><BlogUpdate /></>} />
+            <Route path="*" element={<><Navbar /><Error404 /><Footer /> </>} />
           </Routes>
 
         </BrowserRouter>

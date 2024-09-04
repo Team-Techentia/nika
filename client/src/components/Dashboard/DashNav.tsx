@@ -11,7 +11,7 @@ function DashNav() {
 
     // const handleLogout = async () => {
     //     try {
-    //         const res = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/auth/logout`, {
+    //         const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}/auth/logout`, {
     //             email: user.email
     //         })
     //         dispatch(setAlert({ message: res.data.message, type: 'success' }))

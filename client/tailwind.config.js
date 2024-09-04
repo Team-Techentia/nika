@@ -20,10 +20,6 @@ export default {
       HelveticaNeueCyr: "HelveticaNeueCyr",
       ibm: "IBM Plex Sans, sans-serif"
     },
-    colors: {
-      dark100: "#070707",
-      white: "#fff"
-    }
   },
   plugins: [],
 }

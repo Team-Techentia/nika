@@ -9,12 +9,12 @@ import Congratulation from "./Congratulation/Congratulation";
 import DashNav from "./Dashboard/DashNav";
 import SideNav from "./Dashboard/SideNav";
 import Alert from "./alert/Alert";
-import FundraiserItem from "./Dashboard/BlogItem";
-import DeleteFundraiserPopup from "./Dashboard/DeleteFundraiserPopup";
+import BlogItem from "./Dashboard/BlogItem";
+import DeleteBlogPopup from "./Dashboard/DeleteBlogPopup";
 
 export {
-    DeleteFundraiserPopup,
-    FundraiserItem,
+    DeleteBlogPopup,
+    BlogItem,
     Alert,
     Navbar,
     Footer,

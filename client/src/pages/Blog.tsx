@@ -3,13 +3,8 @@ import { useEffect, useState } from "react";
 import { light, mail } from "../assets";
 import { BlogCard, BreadCrumb, Signup } from "../components";
 import { Blogs } from "../interfaces";
-type propType = {
-  blogs: Blogs[];
-  tags: string[];
-};
-function Blog(prop: propType) {
-  
-  const { blogs, tags } = prop;
+
+function Blog({ blogs, tags }: { blogs: Blogs[], tags: string[] }) {
 
   const [selectTag, setSelecttag] = useState("All");
   useEffect(() => {
@@ -24,11 +19,10 @@ function Blog(prop: propType) {
           <div className="flex gap-1 w-[100%] overflow-auto">
             {tags.map((item, ind) => (
               <p
-                className={`py-1 px-2 rounded-[34px] cursor-pointer text-xs font-inter text-center w-max ${
-                  selectTag == item
+                className={`py-1 px-2 rounded-[34px] cursor-pointer text-xs font-inter text-center w-max ${selectTag == item
                     ? "bg-[#5B40FF] text-white"
                     : "bg-[rgba(91,64,255,0.08)] text-[#5B40FF]"
-                }`}
+                  }`}
                 onClick={() => setSelecttag(item)}
                 key={ind}
               >
@@ -52,9 +46,10 @@ function Blog(prop: propType) {
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
               {selectTag !== "All"
                 ? blogs
-                    .filter((blog) => selectTag === blog.category)
-                    .map((blog, ind) => <BlogCard data={blog} key={ind} />)
-                : blogs.map((blog, ind) => <BlogCard data={blog} key={ind} />)}
+                  .filter((blog) => selectTag === blog.category)
+                  .reverse()
+                  .map((blog, ind) => <BlogCard blog={blog} key={ind} />)
+                : blogs.map((blog, ind) => <BlogCard blog={blog} key={ind} />)}
             </div>
           </div>
         </div>
@@ -72,7 +67,7 @@ function Blog(prop: propType) {
             </div>
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
               {blogs.map((blog, ind) =>
-                ind > 2 ? <BlogCard data={blog} key={ind} /> : <></>
+                ind > 2 ? <BlogCard blog={blog} key={ind} /> : <></>
               )}
             </div>
           </div>
@@ -95,7 +90,7 @@ function Blog(prop: propType) {
                   <img src={light} alt="Light" />
                 </div>
                 <div className="flex flex-col items-start gap-2">
-                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     DeFi Tutorials
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -109,7 +104,7 @@ function Blog(prop: propType) {
                   <img src={light} alt="Light" />
                 </div>
                 <div className="flex flex-col items-start gap-2">
-                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     Company Updates
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -123,7 +118,7 @@ function Blog(prop: propType) {
                   <img src={light} alt="Light" />
                 </div>
                 <div className="flex flex-col items-start gap-2">
-                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     Investment Strategies
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -137,7 +132,7 @@ function Blog(prop: propType) {
                   <img src={light} alt="Light" />
                 </div>
                 <div className="flex flex-col items-start gap-2">
-                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                  <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                     Crypto Market News
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
@@ -197,7 +192,7 @@ function Blog(prop: propType) {
             </div>
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
               {blogs.map((blog, ind) =>
-                ind > 2 ? <BlogCard data={blog} key={ind} /> : <></>
+                ind > 2 ? <BlogCard blog={blog} key={ind} /> : <></>
               )}
             </div>
           </div>

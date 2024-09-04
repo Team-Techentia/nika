@@ -85,10 +85,10 @@ function Article(prop: propType) {
             </div>
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
               {blogs.map((blog, ind) => (
-                <BlogCard data={blog} key={ind} />
+                <BlogCard blog={blog} key={ind} />
               ))}
               {blogs.map((blog, ind) => (
-                <BlogCard data={blog} key={ind} />
+                <BlogCard blog={blog} key={ind} />
               ))}
             </div>
           </div>
@@ -107,7 +107,7 @@ function Article(prop: propType) {
             </div>
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
               {blogs.map((blog, ind) => (
-                <BlogCard data={blog} key={ind} />
+                <BlogCard blog={blog} key={ind} />
               ))}
             </div>
           </div>

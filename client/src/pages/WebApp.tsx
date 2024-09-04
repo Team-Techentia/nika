@@ -137,7 +137,7 @@ function WebApp() {
                 <div className="sm:h-[inherit] sm:w-[1px] sm:block hidden bg-[rgba(7,7,7,0.20)]"></div>
                 <div className="flex sm:w-[50%] items-center sm:border-t-0 pb-8">
                   <div className="flex flex-col justify-start gap-2">
-                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                       Encryption
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.72)] font-inter">
@@ -152,7 +152,7 @@ function WebApp() {
               <div className="flex sm:flex-row flex-col-reverse gap-x-5 gap-y-[17.5px]  border-t-[1px] border-[rgba(7,7,7,0.20)]">
                 <div className="flex sm:w-[50%] items-center pb-8">
                   <div className="flex flex-col justify-start gap-2">
-                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                       Protection against hacks
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.72)] font-inter">
@@ -181,7 +181,7 @@ function WebApp() {
 
                 <div className="flex sm:w-[50%] items-center pb-8">
                   <div className="flex flex-col justify-start gap-2">
-                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-dark100">
+                    <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
                       Transparency in operations
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.72)] font-inter">

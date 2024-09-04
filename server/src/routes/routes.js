@@ -1,13 +1,12 @@
 import express from "express";
-import { submitForm , fetchEntries,  deleteEntry, fetchEntry} from "../controllers/userController.js";
+import { submitForm , fetchEntries,  deleteEntry, fetchEntry, updateEntry} from "../controllers/userController.js";
 
 const router = express.Router();
 
-router.post("/submit", submitForm);
-
- router.get("/blogs", fetchEntries);
- router.get("/blogs/:id", fetchEntry);
-
- router.delete("/entries/:id", deleteEntry);
+router.post("/submit", submitForm)
+    .get("/blogs", fetchEntries)   
+    .get("/blogs/:id", fetchEntry)
+    .put("/blogs/:id", updateEntry)
+    .delete("/blogs/:id", deleteEntry);
 
 export default router;

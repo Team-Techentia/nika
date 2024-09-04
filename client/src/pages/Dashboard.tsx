@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { DashNav, SideNav } from "../components";
+import { BlogCard, DashNav, SideNav } from "../components";
 import { RootState } from "../store/store";
 import { useSelector } from "react-redux";
 import { Blogs } from "../interfaces";
@@ -21,7 +21,7 @@ function Dashboard() {
   //       setUser(JSON.parse(userData));
   //       (async () => {
   //         try {
-  //           const res = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/users`, {
+  //           const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/users`, {
   //             headers: {
   //               Authorization: JSON.parse(userData).token
   //             }
@@ -81,54 +81,15 @@ function Dashboard() {
                 </svg>
               </div>
             </div>
-            <div className="grid 2xl:grid-cols-3 xl:grid-cols-2 grid-cols-1 gap-3 xlg:gap-5 w-[100%]">
-              {/* {
-                userFundRaisings.map((raising, idx) => <div key={idx} className="grow shrink basis-0 h-[258px] flex-col justify-start items-start gap-[22px] inline-flex">
-                  <div className="self-stretch grow shrink basis-0 p-[18px] bg-white rounded-lg border border-[#d0d0d0] flex-col justify-between items-start flex">
-                    <div className="self-stretch justify-between items-start inline-flex">
-                      <div className="h-20 justify-start items-start gap-4 flex">
-                        <div className="h-20 w-20 rounded-[50%] overflow-hidden relative">
-                          <img alt="thumbnail" className="" src={raising.thumbnail} />
-                        </div>
-                        <div className="flex-col justify-center items-start inline-flex">
-                          <div className="text-[#565656] text-xs font-medium font-inter leading-normal">{raising.category}</div>
-                          <div className="justify-start items-center gap-2 inline-flex">
-                            <div className="text-cente text-black text-lg font-bold font-inter leading-normal">{raising.title}</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="hidden sm:block">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path d="M11.5 10C11.5 10.8284 10.8284 11.5 10 11.5C9.17157 11.5 8.5 10.8284 8.5 10C8.5 9.17157 9.17157 8.5 10 8.5C10.8284 8.5 11.5 9.17157 11.5 10Z" fill="black" />
-                          <path d="M17 10C17 10.8284 16.3284 11.5 15.5 11.5C14.6716 11.5 14 10.8284 14 10C14 9.17157 14.6716 8.5 15.5 8.5C16.3284 8.5 17 9.17157 17 10Z" fill="black" />
-                          <path d="M6 10C6 10.8284 5.32843 11.5 4.5 11.5C3.67157 11.5 3 10.8284 3 10C3 9.17157 3.67157 8.5 4.5 8.5C5.32843 8.5 6 9.17157 6 10Z" fill="black" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="self-stretch justify-between items-center inline-flex">
-                      <div className="w-[142px] flex-col justify-start items-start gap-0.5 inline-flex">
-                        <div className="self-stretch h-6 flex-col justify-start items-start gap-[5px] flex">
-                          <div className="text-center text-black text-xl font-semibold font-inter leading-normal">$ {raising.amount}</div>
-                        </div>
-                        <div className="self-stretch text-[#838383] text-xs font-medium font-inter leading-tight">{raising.createdAt!.toString().split("T")[0]}</div>
-                      </div>
-                      <div className="justify-start items-center gap-3 flex">
-                        <div className="px-2 cursor-pointer py-1.5 bg-[#e5f8f4]/70 rounded-[36px] border-2 border-[#288d7c] justify-center items-center gap-1 flex" onClick={() => router.push(`/fundraisers/${raising.id}`)}>
-                          <div className="px-1 justify-start items-start gap-2.5 flex">
-                            <div className="text-center text-[#288d7c] text-sm font-medium font-popins leading-normal">Manage</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>)
-              } */}
+            <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
+              {
+                blogs?.map((blog, ind) => <BlogCard blog={blog} key={ind} to={`/blogs/${blog._id}`} />)
+              }
             </div>
           </div>
         </div>
       </div>
-      
+
     </div>
   )
 }
