@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { setBlogs } from '../store/slices';
 import { RootState } from '../store/store';
 
-const App: React.FC = () => {
+const BlogAdd: React.FC = () => {
   const [value, setValue] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
@@ -234,4 +234,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default BlogAdd;

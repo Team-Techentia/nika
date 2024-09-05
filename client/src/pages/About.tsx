@@ -6,9 +6,11 @@ import { Signup } from "../components";
 import { useEffect } from "react";
 
 function About() {
+  
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+  
   return (
     <>
       <div className="about-hero 2xl:h-[600px] lg:p-[160px_80px] xs:p-[160px_40px] p-[160px_16px] w-full flex justify-center items-center">

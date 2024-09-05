@@ -1,14 +1,17 @@
-import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useLocation, useParams } from "react-router-dom";
+import { RootState } from "../../store/store";
 
 function BreadCrumb() {
+
   const location = useLocation();
+
+  const { id } = useParams();
+
   let path = "";
-  const replaceAll = (str: string) => {
-    while (str.includes("%20")) {
-      str = str.replace("%20", " ");
-    }
-    return str;
-  };
+  
+  const blogs = useSelector((state: RootState) => state.main.blogs);
+
   const breadcrumb = location.pathname.split("/").map((item) => {
     if (item == "") {
       return {
@@ -19,11 +22,12 @@ function BreadCrumb() {
       path += "/";
       path += item;
       return {
-        name: replaceAll(item[0].toLocaleUpperCase() + item.slice(1)),
+        name: item === id ? blogs.filter(blog => blog._id === id)[0]?.title : item,
         path: path,
       };
     }
   });
+
   return (
     <div className="w-full bg-[rgba(0,0,0,0.03)] h-[28px] flex justify-center">
       <div className="w-[1200px] max-w-[100%] sm:px-10 px-4 py-1 flex gap-3 items-center">

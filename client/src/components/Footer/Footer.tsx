@@ -1,7 +1,7 @@
 // import React from 'react'
 
 import { Link } from "react-router-dom";
-import { insta, logo, twitter, youtube } from "../../assets";
+import { logo, youtube } from "../../assets";
 
 function Footer() {
   return (
@@ -55,20 +55,17 @@ function Footer() {
                 <div className="text-white text-sm font-medium font-['Inter'] leading-[16.80px]">
                   Page
                 </div>
-                <Link
-                  className="text-[rgba(255,255,255,0.56)] text-sm font-normal font-['Inter'] leading-tight"
-                  to={"/dashboard"}
-                >
+                <Link className="text-[rgba(255,255,255,0.56)] text-sm font-normal font-['Inter'] leading-tight" to={"/about"}                >
+                  About Us
+                </Link>
+                <Link className="text-[rgba(255,255,255,0.56)] text-sm font-normal font-['Inter'] leading-tight" to={"/blog"}                >
                   Blog
                 </Link>
-                <Link
-                  className="text-[rgba(255,255,255,0.56)] text-sm font-normal font-['Inter'] leading-tight"
-                  to={"/waitlist"}
-                >
+                <Link className="text-[rgba(255,255,255,0.56)] text-sm font-normal font-['Inter'] leading-tight" to={"/waitlist"}                >
                   Waitlist
                 </Link>
               </div>
-              <div className="flex flex-col items-start gap-2">
+              {/* <div className="flex flex-col items-start gap-2">
                 <div className="text-white text-sm font-medium font-['Inter'] leading-[16.80px]">
                   Contact Us
                 </div>
@@ -78,7 +75,7 @@ function Footer() {
                 <p className="text-[rgba(255,255,255,0.56)] text-sm font-normal font-['Inter'] leading-tight">
                   222-22-22
                 </p>
-              </div>
+              </div> */}
               <div className="flex flex-col items-start gap-2">
                 <div className="text-white text-sm font-medium font-['Inter'] leading-[16.80px]">
                   Help
@@ -98,12 +95,18 @@ function Footer() {
               </div>
               <div className="flex flex-col items-start gap-2">
                 <div className="text-white text-sm font-medium font-['Inter'] leading-[16.80px]">
-                  Media
+                  Twitter
                 </div>
                 <div className="flex gap-4">
-                  <img src={twitter} alt="Twitter" />
-                  <img src={insta} alt="Instagram" />
-                  <img src={youtube} alt="Youtube" />
+                  <a href="https://x.com/nikafinance" target="_blank">
+                    <img src={youtube} alt="Youtube" />
+                  </a>
+                  {/* <a href="" target="_blank">
+                    <img src={insta} alt="Instagram" />
+                  </a>
+                  <a href="" target="_blank">
+                    <img src={twitter} alt="Twitter" />
+                  </a> */}
                 </div>
               </div>
             </div>
@@ -124,7 +127,7 @@ function Footer() {
               Products referenced on this website may not be available to persons who are located in, or residents of, the United States and are subject to the risks associated with purchasing crypto assets, including cryptocurrencies and crypto tokens. Because crypto assets are a new technological innovation with a limited history, they are highly speculative assets. Future regulatory actions or policies may limit the ability to sell, exchange, or use a crypto asset. The price of a crypto asset may be impacted by the transactions of a small number of holders. Crypto assets may decline in popularity, acceptance, or use, impacting their price. Carefully consider the risk factors, purchase objectives, fees, expenses, and other information associated with any investment before making a purchase decision. All products that are speculative in nature involve a high degree of risk and uncertainty. There is no guarantee that any token will grow in value.
             </p>
             <p>
-              Past performance of any product is not indicative of future results. Prospective users must not construe the contents of this website as legal, tax, investment, or other advice. Each prospective user is urged to consult with its own advisors with respect to legal, tax, regulatory, financial, accounting, and similar consequences of investing in any product, the suitability of the purchase, and other relevant matters. This website contains an overview summary of the constituents of each product. This website is neither an offer to sell nor a solicitation or recommendation to buy units or shares in any product. The summary set forth on this website does not purport to be complete and may be qualified either in whole or in part by reference to other documents or sources of information. Do not place undue reliance on this website. To the extent this website or any product refers to or incorporates third-party content, DiversiFi is not responsible for any errors or omissions in such content. The tokens have not been approved or disapproved by the Securities and Exchange Commission, are not registered under the Securities Act of 1933, the Investment Company Act of 1940, or any state securities commission or other regulatory body. DiversiFi is not registered as an Investment Adviser under the Investment Advisers Act of 1940 or as a Commodity Pool Operator or Commodity Trading Adviser under the Commodity Exchange Act. Your use of this site signifies that you accept our Terms and Conditions of Use (HYPERLINK), including the Privacy Policy (HYPERLINK).
+              Past performance of any product is not indicative of future results. Prospective users must not construe the contents of this website as legal, tax, investment, or other advice. Each prospective user is urged to consult with its own advisors with respect to legal, tax, regulatory, financial, accounting, and similar consequences of investing in any product, the suitability of the purchase, and other relevant matters. This website contains an overview summary of the constituents of each product. This website is neither an offer to sell nor a solicitation or recommendation to buy units or shares in any product. The summary set forth on this website does not purport to be complete and may be qualified either in whole or in part by reference to other documents or sources of information. Do not place undue reliance on this website. To the extent this website or any product refers to or incorporates third-party content, DiversiFi is not responsible for any errors or omissions in such content. The tokens have not been approved or disapproved by the Securities and Exchange Commission, are not registered under the Securities Act of 1933, the Investment Company Act of 1940, or any state securities commission or other regulatory body. DiversiFi is not registered as an Investment Adviser under the Investment Advisers Act of 1940 or as a Commodity Pool Operator or Commodity Trading Adviser under the Commodity Exchange Act. Your use of this site signifies that you accept our <Link to="/dashboard"> Terms and Conditions of Use</Link> , including the <Link to="/privacy">Privacy Policy</Link>.
             </p>
           </div>
         </div>

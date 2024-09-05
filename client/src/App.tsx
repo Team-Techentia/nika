@@ -22,12 +22,10 @@ function App() {
     } catch (e: any) {
       console.log(e)
     }
-
   }
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
     fetchBlogs()
   }, [])
 
@@ -44,8 +42,6 @@ function App() {
 
   const alert = useSelector((state: RootState) => state.ui.alert);
 
-  console.log(blogs)
-
   return (
     <>
       {congrats && <Congratulation setCongrats={setCongrats} />}
@@ -56,13 +52,13 @@ function App() {
 
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<><Navbar /><Home congrats={congrats} setCongrats={setCongrats} /><Footer /> </>} />
+            <Route path="/" element={<><Navbar /><Home  /><Footer /> </>} />
             <Route path="/about" element={<><Navbar /><About /><Footer /> </>} />
             <Route path="/blog" element={<><Navbar /><Blog blogs={blogs} tags={tags} /><Footer /> </>} />
             <Route path="/blog/:id" element={<><Navbar /><ArticlePage /><Footer /> </>} />
             <Route path="/privacy" element={<><Navbar /><Privacy /><Footer /> </>} />
             <Route path="/terms" element={<><Navbar /><Terms /><Footer /> </>} />
-            <Route path="/waitlist" element={<><Navbar /><Waitlist /><Footer /> </>} />
+            <Route path="/waitlist" element={<><Navbar /><Waitlist congrats={congrats} setCongrats={setCongrats}/><Footer /> </>} />
             <Route path="/webapp" element={<><Navbar /><WebApp /><Footer /> </>} />
             <Route path="/dashboard" element={<><Dashboard /> </>} />
             <Route path="/add" element={<><AddBlog /> </>} />

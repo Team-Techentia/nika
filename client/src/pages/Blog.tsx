@@ -1,20 +1,23 @@
 // import React from 'react'
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { light, mail } from "../assets";
 import { BlogCard, BreadCrumb, Signup } from "../components";
 import { Blogs } from "../interfaces";
 
-function Blog({ blogs, tags }: { blogs: Blogs[], tags: string[] }) {
+function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
 
-  const [selectTag, setSelecttag] = useState("All");
+  // const [selectTag, setSelecttag] = useState("All");
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
   console.log(blogs);
+
   return (
     <>
       <BreadCrumb />
-      <div className="lg:p-[30px_80px_0] xs:p-[30px_40px_0] p-[30px_16px_0] w-full flex xl:justify-center justify-start overflow-hidden">
+      {/* <div className="lg:p-[30px_80px_0] xs:p-[30px_40px_0] p-[30px_16px_0] w-full flex xl:justify-center justify-start overflow-hidden">
         <div className="xl:w-[1280px] max-w-[100%] ">
           <div className="flex gap-1 w-[100%] overflow-auto">
             {tags.map((item, ind) => (
@@ -31,7 +34,7 @@ function Blog({ blogs, tags }: { blogs: Blogs[], tags: string[] }) {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="lg:p-[75px_80px] xs:p-[25px_40px] p-[25px_16px] w-full flex justify-center">
         <div className="w-[1280px] max-w-[100%]">
           <div className="w-[100%] flex flex-col items-start gap-6">
@@ -44,12 +47,15 @@ function Blog({ blogs, tags }: { blogs: Blogs[], tags: string[] }) {
               </div>
             </div>
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
-              {selectTag !== "All"
+              {/* {selectTag !== "All"
                 ? blogs
                   .filter((blog) => selectTag === blog.category)
                   .reverse()
                   .map((blog, ind) => <BlogCard blog={blog} key={ind} />)
-                : blogs.map((blog, ind) => <BlogCard blog={blog} key={ind} />)}
+                : blogs.map((blog, ind) => <BlogCard blog={blog} key={ind} />)} */}
+                {
+                   blogs.map((blog, ind) => <BlogCard blog={blog} key={ind} />)
+                }
             </div>
           </div>
         </div>

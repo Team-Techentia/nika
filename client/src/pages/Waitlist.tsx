@@ -5,17 +5,19 @@ import { jo1, jo2, jo3, jo4, jo5, jo6, mail } from "../assets";
 import { HomeCard, Signup } from "../components";
 import card from "../utils/card";
 
-function Waitlist() {
+function Waitlist({ congrats, setCongrats }: { congrats: boolean, setCongrats: (x: boolean) => void }) {
+
+
   const waitlistCard: card[] = [
     {
       img: jo1,
       title: "Early Access to Products",
-      detail:        "Be among the first to access Nika's cutting-edge crypto indices and products, designed to simplify and enhance your digital asset investment experience.",
+      detail: "Be among the first to access Nika's cutting-edge crypto indices and products, designed to simplify and enhance your digital asset investment experience.",
     },
     {
       img: jo2,
       title: "Exclusive Offers and Bonuses",
-      detail:        "Enjoy special bonuses and rewards available only to our waitlist members.",
+      detail: "Enjoy special bonuses and rewards available only to our waitlist members.",
     },
     {
       img: jo3,
@@ -25,7 +27,7 @@ function Waitlist() {
     {
       img: jo4,
       title: "Exclusive Insights",
-      detail:        "Stay ahead of the curve with exclusive insights, market analysis, and expert opinions from our team of seasoned professionals and industry leaders.",
+      detail: "Stay ahead of the curve with exclusive insights, market analysis, and expert opinions from our team of seasoned professionals and industry leaders.",
     },
     {
       img: jo5,
@@ -35,19 +37,21 @@ function Waitlist() {
     {
       img: jo6,
       title: "Shape the Future of DeFi Investing",
-      detail:        "Play an active role in shaping the future of decentralized finance by participating in beta testing, providing feedback, and contributing to the development of our platform.",
+      detail: "Play an active role in shaping the future of decentralized finance by participating in beta testing, providing feedback, and contributing to the development of our platform.",
     }
   ];
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
   return (
     <>
       <div className="lg:p-[160px_80px_200px_80px] waitlist-hero xs:p-[160px_40px_120px_40px] p-[160px_25px_120px_25px] flex justify-center items-center">
         <div className="w-[1280px] max-w-full flex xs:gap-8 gap-6 lg:flex-row lg:items-center flex-col">
           <div className="lg:w-[50%] w-full">
             <h1 className="lg:text-[64px] text-[42px] tracking-[-1.28px] text-start leading-[100%] text-[#070707] font-HelveticaNeueCyr font-[550] lg:max-w-[690px] max-w-[500px]">
-            On-Chain Diversification Starts Here:
+              On-Chain Diversification Starts Here:
             </h1>
             <p className="font-inter font-[500] leading-6 text-[rgba(7,7,7,0.72)]">
               Join Our Waitlist Today
@@ -77,7 +81,7 @@ function Waitlist() {
                 </div>
               </div>
             </div>
-            <button className="h-[41px] btn btn1 px-4 py-[15px] text-center text-base font-medium font-ibm leading-[17.60px] rounded flex-col justify-center items-center inline-flex">
+            <button onClick={(e) => { setCongrats(congrats) ; e.preventDefault();} } className="h-[41px] btn btn1 px-4 py-[15px] text-center text-base font-medium font-ibm leading-[17.60px] rounded flex-col justify-center items-center inline-flex">
               Get Started
             </button>
           </form>

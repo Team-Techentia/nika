@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Blogs } from "../interfaces";
 import axios from "axios";
 
-function ArticlePage() {
+function BlogPage() {
 
   const { id} = useParams();
 
@@ -21,14 +21,14 @@ function ArticlePage() {
     }
   }
 
-  const tags: string[] = [
-    "All",
-    "Tag",
-    "DeFi Tutorials",
-    "Insights",
-    "Updates",
-    "Investment Strategies",
-  ];
+  // const tags: string[] = [
+  //   "All",
+  //   "Tag",
+  //   "DeFi Tutorials",
+  //   "Insights",
+  //   "Updates",
+  //   "Investment Strategies",
+  // ];
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -42,7 +42,7 @@ function ArticlePage() {
       <div className="flex w-full justify-center lg:px-[80px]">
         <div className="w-[1200px] max-w-full lg:pt-8 lg:pb-[60px] lg:px-0 sm:p-[25px_40px] p-[25px_16px]">
           <div className="flex gap-8 justify-center items-start w-full">
-            <article className="w-[280px] lg:flex hidden flex-col p-4 bg-[#5B40FF] rounded-[6px] gap-6 ">
+            {/* <article className="w-[280px] lg:flex hidden flex-col p-4 bg-[#5B40FF] rounded-[6px] gap-6 ">
               <div className="pb-6 flex flex-col w-full gap-3 border-b-[1px] border-[rgba(255,255,255,0.20)]">
                 <div className="text-white text-sm font-normal font-inter leading-tight">
                   Fast links
@@ -77,8 +77,8 @@ function ArticlePage() {
                   Subscribe
                 </button>
               </div>
-            </article>
-            <div className="flex flex-col w-full gap-5 lg:w-[576px]">
+            </article> */}
+            <div className="flex flex-col w-full gap-5 md:w-[576px]">
               <div className="w-full" id="digital-finance">
                 <img src={blog.thumbnail || ''} className="w-full h-[307px]" alt="" />
               </div>
@@ -358,7 +358,7 @@ function ArticlePage() {
                 </div>
               </article> */}
             </div>
-            <article className="w-[280px] lg:flex hidden flex-col gap-8 ">
+            {/* <article className="w-[280px] lg:flex hidden flex-col gap-8 ">
               <div className="flex flex-col gap-3 w-full">
                 <div className="text-black text-xl font-HelveticaNeueCyr leading-normal">
                   Related articles
@@ -403,7 +403,7 @@ function ArticlePage() {
                   )}
                 </div>
               </div>
-            </article>
+            </article> */}
           </div>
         </div>
       </div>
@@ -413,4 +413,4 @@ function ArticlePage() {
   );
 }
 
-export default ArticlePage;
+export default BlogPage;
