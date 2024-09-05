@@ -37,11 +37,11 @@ function BreadCrumb() {
             to={item.path}
             className="flex gap-3 items-center"
           >
-            <p className="text-ellipsis overflow-hidden line-clamp-1">
+            <p className="font-['Inter'_,sans-serif] overflow-hidden line-clamp-1">
               {item.name}
             </p>
             {ind != breadcrumb.length - 1 && (
-              <div className="text-sm leading-[140%] font-ibm text-[rgba(0,0,0,0.32)]">
+              <div className="text-sm leading-[140%] text-[rgba(0,0,0,0.32)]">
                 •
               </div>
             )}

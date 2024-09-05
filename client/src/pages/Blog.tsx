@@ -71,7 +71,7 @@ function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
             </div>
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
               {blogs.map((blog, ind) =>
-                ind > 2 ? <BlogCard blog={blog} key={ind} /> : <></>
+                ind > 2 && <BlogCard blog={blog} key={ind} /> 
               )}
             </div>
           </div>
@@ -196,7 +196,7 @@ function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
             </div>
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
               {blogs.map((blog, ind) =>
-                ind > 2 ? <BlogCard blog={blog} key={ind} /> : <></>
+                ind > 2 && <BlogCard blog={blog} key={ind} /> 
               )}
             </div>
           </div>
