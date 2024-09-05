@@ -238,11 +238,11 @@ function BlogItem({ setDeletePopup }: { setDeletePopup: (data: boolean) => void 
                     </div>
                     <div className="self-stretch h-px bg-[#d9d9d9]" />
                     <div className="self-stretch justify-between items-center inline-flex">
-                        <div className="text-center text-black text-base font-semibold font-['Poppins'] leading-normal">Delete Fundraiser</div>
+                        <div className="text-center text-black text-base font-semibold font-['Poppins'] leading-normal">Delete Blog</div>
                         <div className="w-5 h-5 relative" />
                     </div>
                     <div className="sm:flex-row flex-col sm:justify-between gap-5 w-full sm:items-center inline-flex">
-                        <div className="text-[#6d6d6d] text-sm font-normal font-roboto leading-tight">NOTE: All your data according this fundraising ...</div>
+                        <div className="text-[#6d6d6d] text-sm font-normal font-roboto leading-tight">NOTE: All your data according this Blog ...</div>
                         <div className="px-2 py-1.5 rounded-[36px] border-2 cursor-pointer border-[#ff4f49] justify-center items-center gap-1 flex" onClick={() => setDeletePopup(true)}>
                             <div className="px-1 justify-start items-start gap-2.5 flex">
                                 <div className="text-center text-[#ff4f49] text-sm font-medium font-['Poppins'] leading-normal">Delete</div>

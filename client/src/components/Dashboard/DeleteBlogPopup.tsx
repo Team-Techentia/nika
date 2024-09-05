@@ -51,8 +51,8 @@ function DeleteBlogPopup({ setDeletePopup }: { setDeletePopup: (data: boolean) =
             </div>
             <div className="self-stretch h-[174px] py-[17px] flex-col justify-start items-center gap-11 flex">
                 <div className="self-stretch h-[60px] flex-col justify-start items-center gap-3 flex">
-                    <div className="self-stretch opacity-90 text-center text-[#112230] text-xl font-bold font-inter leading-7">Are you sure you want to delete this fundraising?</div>
-                    <div className="self-stretch text-center text-[#6d6d6d] text-sm font-normal font-roboto leading-tight">All your data according this fundraising will be deleted</div>
+                    <div className="self-stretch opacity-90 text-center text-[#112230] text-xl font-bold font-inter leading-7">Are you sure you want to delete this blog?</div>
+                    <div className="self-stretch text-center text-[#6d6d6d] text-sm font-normal font-roboto leading-tight">All your data according this blog will be deleted</div>
                 </div>
                 <div className="self-stretch justify-center items-start gap-3 inline-flex">
                     <button onClick={deleteRaising} className="h-9 px-2 cursor-pointer py-1.5 bg-[#e5f8f4]/70 rounded-[36px] border-2 border-[#288d7c] justify-center items-center gap-1 flex">
