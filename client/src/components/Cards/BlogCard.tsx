@@ -10,7 +10,7 @@ function BlogCard({ blog, to }: { blog: Blogs, to?: string }) {
         <div className="w-full">
           <img src={blog.thumbnail || ''} className="w-full h-[200px]" alt="" />
         </div>
-        <div className="flex flex-col items-start gap-4 w-full">
+        <div className="flex flex-col items-start gap-4 w-full  overflow-hidden">
           <div className="flex flex-col items-start gap-2 ">
             <p className="text-[20px] font-HelveticaNeueCyr font-[550] leading-[120%] tracking-[-0.5px] text-[#070707]"            >
               {blog.title}

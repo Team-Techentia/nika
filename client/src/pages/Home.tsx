@@ -170,7 +170,7 @@ function Home() {
 
                 <div className="flex sm:w-[50%] justify-center items-center py-10">
                   <div className="sm:w-[272px] xl:w-[342px] xl:h-[355px] sm:h-[282px] w-[288px] h-[260px]">
-                    <img src={ci4} />
+                  <Lottie animationData={ci4} loop={true} />
                   </div>
                 </div>
               </div>

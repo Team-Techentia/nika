@@ -150,7 +150,7 @@ function BlogPage() {
                   </button>
                 </div>
               </article>
-              <div className="" dangerouslySetInnerHTML={{ __html: blog.content }}>
+              <div className="overflow-hidden" dangerouslySetInnerHTML={{ __html: blog.content }}>
               </div>
               {/* <div className="xs:py-8 py-4 flex flex-col gap-4 w-full">
                 <div className="text-[rgba(7,7,7,0.72)] text-base font-normal font-inter leading-normal tracking-[-0.08px]">

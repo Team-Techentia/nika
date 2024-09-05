@@ -6,7 +6,7 @@ import { Signup } from "../components";
 import { useEffect } from "react";
 
 function About() {
-  
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
@@ -38,10 +38,7 @@ function About() {
                     Our Mission
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                    Example: "At Alongside, we believe in simplifying blockchain
-                    diversification, making it accessible to everyone. Our
-                    mission is to empower investors by providing secure and
-                    innovative financial solutions.
+                  Our mission is to democratize access to  investments by offering curated, on-chain products that empower all investors with simplicity, security, and value.
                   </p>
                 </div>
               </div>
@@ -54,10 +51,7 @@ function About() {
                     Our Vision
                   </div>
                   <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                    Example: "At Alongside, we believe in simplifying blockchain
-                    diversification, making it accessible to everyone. Our
-                    mission is to empower investors by providing secure and
-                    innovative financial solutions.
+                  At Nika, we envision a world where digital asset management is seamless, secure, and accessible, becoming the go-to platform for bridging traditional and decentralized finance.
                   </p>
                 </div>
               </div>
