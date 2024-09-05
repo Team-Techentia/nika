@@ -148,7 +148,7 @@ function BlogItem({ setDeletePopup }: { setDeletePopup: (data: boolean) => void 
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M12.8002 7.99981L3.2002 7.9998M3.2002 7.9998L6.59431 11.1998M3.2002 7.9998L6.59431 4.7998" stroke="#298D7C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                        <p>Back to fundraisers</p>
+                        <p>Back to Dashboard</p>
                     </Link>
                 </div>
                 <div className="max-w-[793px] w-[100%] xlg:p-4 md:p-3 p-2.5 bg-white rounded-lg border border-[#d0d0d0] flex-col justify-start items-start gap-5 inline-flex">

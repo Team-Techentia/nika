@@ -12,8 +12,6 @@ function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  console.log(blogs);
-
   return (
     <>
       <BreadCrumb />
