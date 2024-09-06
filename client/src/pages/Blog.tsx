@@ -154,7 +154,7 @@ function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
       {/* Stay Informed Start */}
       <form
         method="POST"
-        className="lg:p-[0px_80px] xs:p-[0px_40px] p-[0px_16px] w-full flex justify-center"
+        className="lg:p-[0px_80px] xs:p-[0px_40px] p-[0px_16px] w-full flex justify-center mb-20"
       >
         <div className="w-[1280px] max-w-[100%] rounded-[12px] stay-sec sm:p-[60px_24px] p-[24px_12px] flex lg:flex-row flex-col gap-3">
           <div className="lg:w-[50%] w-[100%]">
@@ -162,8 +162,7 @@ function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
               Stay Informed
             </div>
             <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter pt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Sign up and stay ahead of the curve with early access and exclusive insights.
             </p>
           </div>
           <div className="lg:w-[50%] w-[100%] bg-white xs:p-5 p-4 gap-3 rounded-[8px] border-[1px] border-[rgba(255,255,255,0.20)] flex flex-col xs:gap-5">

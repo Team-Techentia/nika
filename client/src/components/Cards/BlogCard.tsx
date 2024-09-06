@@ -20,9 +20,9 @@ function BlogCard({ blog, to }: { blog: Blogs, to?: string }) {
 
           </div>
           <div className="flex justify-between w-full items-center">
-            <div className="px-2 py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 flex">
+            <div className="px-2 py-1 bg-[#5a40fe rounded-[34px] justify-center items-center gap-2.5 flex">
               <div className="text-white text-xs font-medium font-inter leading-[18px]">
-                #{blog.category}
+                {/* #{blog.category}   */}
               </div>
             </div>
             <div className="text-right text-[#070707] text-sm font-normal font-inter leading-tight">
