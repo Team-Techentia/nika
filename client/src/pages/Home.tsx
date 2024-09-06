@@ -283,8 +283,7 @@ function Home() {
                       Investor Centric Approach
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                    Third-party custodians, audited products, and insurance options ensure the safety of your assets.
-                    </p>
+                    Expertly curated products designed to optimize risk-adjusted returns, tailored to meet your investment goals.                    </p>
                   </div>
                 </div>
                 <div className="sm:p-6 p-4 flex items-start gap-4 flex-col rounded-[12px] bg-[#F6F6FD]">
@@ -296,8 +295,7 @@ function Home() {
                       Easily Accessible
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                    Third-party custodians, audited products, and insurance options ensure the safety of your assets.
-                    </p>
+                    Invest in diverse products without capital constraints, enabling you to diversify your investments freely.                    </p>
                   </div>
                 </div>
               </div>
