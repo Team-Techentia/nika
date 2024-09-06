@@ -1,7 +1,7 @@
 // import React from 'react'
 import { useEffect } from "react";
 import {  mail } from "../assets";
-import { BlogCard, BreadCrumb, Signup } from "../components";
+import { BlogCard, BreadCrumb } from "../components";
 import { Blogs } from "../interfaces";
 
 function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
@@ -203,7 +203,7 @@ function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
           </div>
         </div>
       </div> */}
-      <Signup />
+      {/* <Signup /> */}
     </>
   );
 }

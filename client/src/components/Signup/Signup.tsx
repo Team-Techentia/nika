@@ -1,10 +1,10 @@
-// import { mail } from "../../assets";
+import { mail } from "../../assets";
 
 function Signup() {
   return (
     <>
       {/* Signup Start */}
-      {/* <form
+      <form
         method="POST"
         className="lg:p-[0px_80px_75px] xs:p-[0px_40px_25px] p-[0px_16px_25px] w-full flex justify-center"
       >
@@ -40,7 +40,7 @@ function Signup() {
             </button>
           </div>
         </div>
-      </form> */}
+      </form>
       {/* Signup End */}
     </>
   );
