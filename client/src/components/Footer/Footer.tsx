@@ -18,7 +18,7 @@ function Footer() {
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="">
                 <h3 className="lg:text-[36px] font-[550] font-HelveticaNeueCyr tracking-[-1px] lg:leading-[120%] text-white text-[28px] leading-[110%] lg:max-w-[450px] max-w-[330px]">
-                  Effortless On-Chain Diversification
+                  On-Chain Diversification Made Simple
                 </h3>
                 <div className="text-[rgba(255,255,255,.72)] pt-1 text-sm font-normal font-['Inter'] leading-[140%]">
                   Investment opportunities available to everyone

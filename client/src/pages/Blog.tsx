@@ -1,6 +1,6 @@
 // import React from 'react'
 import { useEffect } from "react";
-import { light, mail } from "../assets";
+import {  mail } from "../assets";
 import { BlogCard, BreadCrumb, Signup } from "../components";
 import { Blogs } from "../interfaces";
 
@@ -40,9 +40,9 @@ function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
               <div className="text-[#070707] sm:text-[42px] text-[28px] font-['HelveticaNeueCyr'] leading-[42px] font-[550]">
                 Blog
               </div>
-              <div className="w-auto text-right text-[#070707] text-base font-medium font-inter leading-normal">
+              {/* <div className="w-auto text-right text-[#070707] text-base font-medium font-inter leading-normal">
                 Show more
-              </div>
+              </div> */}
             </div>
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
               {/* {selectTag !== "All"
@@ -51,14 +51,14 @@ function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
                   .reverse()
                   .map((blog, ind) => <BlogCard blog={blog} key={ind} />)
                 : blogs.map((blog, ind) => <BlogCard blog={blog} key={ind} />)} */}
-                {
-                   blogs.map((blog, ind) => <BlogCard blog={blog} key={ind} />)
-                }
+              {
+                [...blogs].reverse().map((blog, ind) => <BlogCard blog={blog} key={ind} />)
+              }
             </div>
           </div>
         </div>
       </div>
-      <div className="lg:p-[75px_80px_0] xs:p-[25px_40px_0] p-[25px_16px_0] w-full flex justify-center">
+      {/* <div className="lg:p-[75px_80px_0] xs:p-[25px_40px_0] p-[25px_16px_0] w-full flex justify-center">
         <div className="w-[1280px] max-w-[100%]">
           <div className="w-[100%] flex flex-col items-start gap-6">
             <div className="flex justify-between w-full items-center">
@@ -70,14 +70,16 @@ function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
               </div>
             </div>
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
-              {blogs.map((blog, ind) =>
-                ind > 2 && <BlogCard blog={blog} key={ind} /> 
-              )}
+              {
+              blogs.map((blog, ind) =>
+                ind > 2 && <BlogCard blog={blog} key={ind} />
+              )
+              }
             </div>
           </div>
         </div>
-      </div>
-      <div className="lg:p-[75px_80px] xs:p-[25px_40px] p-[25px_16px] w-full flex justify-center">
+      </div> */}
+      {/* <div className="lg:p-[75px_80px] xs:p-[25px_40px] p-[25px_16px] w-full flex justify-center">
         <div className="w-[1280px] max-w-[100%]">
           <div className="w-[100%] flex flex-col items-start gap-6">
             <div className="flex justify-between w-full items-center">
@@ -148,7 +150,7 @@ function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Stay Informed Start */}
       <form
         method="POST"
@@ -183,7 +185,7 @@ function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
       </form>
       {/* Stay Informed End */}
 
-      <div className="lg:p-[75px_80px] xs:p-[25px_40px] p-[25px_16px] w-full flex justify-center">
+      {/* <div className="lg:p-[75px_80px] xs:p-[25px_40px] p-[25px_16px] w-full flex justify-center">
         <div className="w-[1280px] max-w-[100%]">
           <div className="w-[100%] flex flex-col items-start gap-6">
             <div className="flex justify-between w-full items-center">
@@ -196,12 +198,12 @@ function Blog({ blogs }: { blogs: Blogs[], tags: string[] }) {
             </div>
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-rows-[auto] gap-3 ">
               {blogs.map((blog, ind) =>
-                ind > 2 && <BlogCard blog={blog} key={ind} /> 
+                ind > 2 && <BlogCard blog={blog} key={ind} />
               )}
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <Signup />
     </>
   );

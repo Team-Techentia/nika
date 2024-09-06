@@ -20,8 +20,7 @@ function About() {
               About Us
             </h1>
             <p className="font-inter font-[500] leading-6 text-[rgba(7,7,7,0.72)]">
-            Third-party custodians, audited products, and insurance options ensure the safety of your assets.
-            </p>
+            At Nika, we're revolutionizing digital asset investing by offering expertly curated crypto indices and products, making diversification simple and accessible for investors of all types. Our experienced team leverages advanced statistical analysis and rigorous backtesting to construct indices that maximize risk-adjusted returns. With a user-friendly interface and robust security measures, we provide a seamless bridge between traditional finance and DeFi, empowering you to invest in the future of finance with confidence.            </p>
           </div>
         </div>
       </div>

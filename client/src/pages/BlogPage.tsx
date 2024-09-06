@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { BreadCrumb, Signup } from "../components";
-import { al1, al2, al3, al4, mailWhite, } from "../assets";
+// import { al1, al2, al3, al4, mailWhite, } from "../assets";
 import { useEffect, useState } from "react";
 import { Blogs } from "../interfaces";
 import axios from "axios";
@@ -78,18 +78,18 @@ function BlogPage() {
                 </button>
               </div>
             </article> */}
-            <div className="flex flex-col w-full gap-5 md:w-[576px]">
-              <div className="w-full" id="digital-finance">
-                <img src={blog.thumbnail || ''} className="w-full h-[307px]" alt="" />
+            <div className="flex flex-col w-full gap-5 md:w-[876px]">
+              <div className="w-full flex justify-center" id="digital-finance">
+                <img src={blog.thumbnail || ''} className="w-full max-w-[576px] h-[307px]" alt="" />
               </div>
-              <div
+              {/* <div
                 id="#ledgers"
                 className="px-2 w-fit py-1 bg-[#5a40fe] rounded-[34px] justify-center items-center gap-2.5 flex"
               >
                 <div className="text-white text-xs font-medium font-inter leading-[18px]">
                   #{blog.category}
                 </div>
-              </div>
+              </div> */}
               <div className="text-[#070707] sm:text-[42px] text-[28px] font-HelveticaNeueCyr leading-[42px] font-[550]">
                 {blog.title}
               </div>
@@ -100,21 +100,21 @@ function BlogPage() {
                   <div className="text-black text-lg font-medium font-ibm leading-[25.20px]"> {blog.author}
                   </div>
                 </div>
-                <div className="">
+                {/* <div className="">
                   <div className="text-[rgba(0,0,0,0.56)] text-sm font-normal font-ibm leading-tight"> Read
                   </div>
 
                   <div className="text-black text-lg font-medium font-ibm leading-[25.20px]">{blog.readLength}
                   </div>
-                </div>
-                <div className="">
+                </div> */}
+                {/* <div className="">
                   <div className="text-[rgba(0,0,0,0.56)] text-sm font-normal font-ibm leading-tight"> Share
                   </div>
                   <div className="flex gap-1"> <img src={al1} alt="Link" /> <img src={al2} alt="Linkdin" /> <img src={al3} alt="Facebook" /> <img src={al4} alt="Twitter" />
                   </div>
-                </div>
+                </div> */}
               </div>
-              <article className="w-full lg:hidden flex flex-col p-4 bg-[#5B40FF] rounded-[6px] gap-6 ">
+              {/* <article className="w-full lg:hidden flex flex-col p-4 bg-[#5B40FF] rounded-[6px] gap-6 ">
                 <div className="pb-6 flex flex-col w-full gap-3 border-b-[1px] border-[rgba(255,255,255,0.20)]">
                   <div className="text-white text-sm font-normal font-inter leading-tight"> Fast links
                   </div>
@@ -149,8 +149,8 @@ function BlogPage() {
                   <button className="h-[34px] w-full px-3 py-2.5 rounded text-center btn btn5 text-sm font-medium font-ibm leading-none flex-col justify-center items-center flex"> Subscribe
                   </button>
                 </div>
-              </article>
-              <div className="overflow-hidden" dangerouslySetInnerHTML={{ __html: blog.content }}>
+              </article> */}
+              <div className="overflow-hidden flex flex-col items-center" dangerouslySetInnerHTML={{ __html: blog.content }}>
               </div>
               {/* <div className="xs:py-8 py-4 flex flex-col gap-4 w-full">
                 <div className="text-[rgba(7,7,7,0.72)] text-base font-normal font-inter leading-normal tracking-[-0.08px]">
