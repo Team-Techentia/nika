@@ -65,15 +65,15 @@ function About() {
             <div className="text-[#070707] sm:text-[42px] text-[28px] font-['HelveticaNeueCyr'] leading-[42px] font-[550]">
               Team Expertise
             </div>
-            <div className="flex sm:flex-row flex-col gap-3">
-              <div className="sm:w-[50%] sm:h-[inherit] flex justify-center items-center">
+            <div className="flex lg:flex-row flex-col gap-3">
+              <div className="lg:w-[50%] lg:h-[inherit] flex justify-center items-center">
                 <Lottie
                   animationData={ci1}
-                  className="xs:w-[316px] h-[280px] max-w-[100%]"
+                  className="xs:w-[394px] h-[390px] max-w-[100%]"
                   alt="Circle Lottie"
                 />
               </div>
-              <div className="grid sm:w-[50%] grid-rows-3 grid-cols-1 gap-3 ">
+              <div className="flex flex-col lg:w-[50%] grid-rows-3 grid-cols-1 gap-3 ">
                 <div className="sm:p-6 p-4 flex items-start gap-4 flex-col rounded-[12px] bg-[#F6F6FD]">
                   <div className="">
                     <img src={cloud} alt="Cloud" />

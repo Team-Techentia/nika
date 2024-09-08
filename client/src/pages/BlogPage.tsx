@@ -80,7 +80,7 @@ function BlogPage() {
             </article> */}
             <div className="flex flex-col w-full gap-5 md:w-[876px]">
               <div className="w-full flex justify-center" id="digital-finance">
-                <img src={blog.thumbnail || ''} className="w-full max-w-[576px] h-[307px]" alt="" />
+                <img src={blog.thumbnail || ''} className="w-full max-w-[876px] md:h-[387px" alt="" />
               </div>
               {/* <div
                 id="#ledgers"

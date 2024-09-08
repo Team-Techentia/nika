@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function Home() {
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   return (
@@ -137,13 +137,12 @@ function Home() {
                 </div>
               </div>
               <div className="flex sm:flex-row flex-col gap-x-5 gap-y-[17.5px]  border-t-[1px] border-[rgba(7,7,7,0.20)]">
-                <div className="flex sm:w-[50%] justify-center items-center  py-[80px]">
-                  <div className="sm:w-[282px] xl:w-[518px] xl:h-[436px] sm:h-[236px] w-[288px] h-[260px]">
+                <div className="flex sm:w-[50%] justify-center items-center py-[30px]">
+                  <div className="sm:w-[262px] xl:w-[408px] xl:h-[396px] bg-red-60 sm:h-[276px] w-[288px] h-[260px]">
                     <Lottie animationData={ci3} loop={true} />
                   </div>
                 </div>
                 <div className="sm:h-[inherit] sm:w-[1px] sm:block hidden bg-[rgba(7,7,7,0.20)]"></div>
-
                 <div className="flex sm:w-[50%] items-center pb-8">
                   <div className="flex flex-col justify-start gap-2">
                     <div className="font-HelveticaNeueCyr sm:text-[28px] text-[20px] leading-[110%] tracking-[-1px] font-[550]  text-black">
@@ -169,7 +168,7 @@ function Home() {
                 <div className="sm:h-[inherit] sm:w-[1px] sm:block hidden bg-[rgba(7,7,7,0.20)]"></div>
 
                 <div className="flex sm:w-[50%] justify-center items-center py-10">
-                  <div className="sm:w-[272px] xl:w-[342px] xl:h-[355px] sm:h-[282px] w-[288px] h-[260px]">
+                  <div className="sm:w-[262px] md:w-[322px] xl:w-[532px] xl:h-[355px] sm:h-[282px] w-[288px] h-[260px]">
                   <Lottie animationData={ci4} loop={true} />
                   </div>
                 </div>

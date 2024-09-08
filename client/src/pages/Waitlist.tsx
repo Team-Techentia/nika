@@ -7,7 +7,6 @@ import card from "../utils/card";
 
 function Waitlist({ congrats, setCongrats }: { congrats: boolean, setCongrats: (x: boolean) => void }) {
 
-
   const waitlistCard: card[] = [
     {
       img: jo1,
@@ -22,7 +21,7 @@ function Waitlist({ congrats, setCongrats }: { congrats: boolean, setCongrats: (
     {
       img: jo3,
       title: "Personalized Recommendations",
-      detail: "Receive suggestions based on your preferences and risk profile, helping you make informed decisions and optimize your portfolio.s",
+      detail: "Receive suggestions based on your preferences and risk profile, helping you make informed decisions and optimize your portfolio.",
     },
     {
       img: jo4,
@@ -81,7 +80,7 @@ function Waitlist({ congrats, setCongrats }: { congrats: boolean, setCongrats: (
                 </div>
               </div>
             </div>
-            <button onClick={(e) => { setCongrats(congrats) ; e.preventDefault();} } className="h-[41px] btn btn1 px-4 py-[15px] text-center text-base font-medium font-ibm leading-[17.60px] rounded flex-col justify-center items-center inline-flex">
+            <button onClick={(e) => { setCongrats(!congrats) ; e.preventDefault();} } className="h-[41px] btn btn1 px-4 py-[15px] text-center text-base font-medium font-ibm leading-[17.60px] rounded flex-col justify-center items-center inline-flex">
               Get Started
             </button>
           </form>
