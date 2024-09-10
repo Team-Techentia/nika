@@ -1,9 +1,12 @@
 // import React from 'react'
 
-import { useEffect } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { jo1, jo2, jo3, jo4, jo5, jo6, mail } from "../assets";
 import { HomeCard, Signup } from "../components";
 import card from "../utils/card";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setAlert } from "../store/UISlice";
 
 function Waitlist({ congrats, setCongrats }: { congrats: boolean, setCongrats: (x: boolean) => void }) {
 
@@ -44,6 +47,32 @@ function Waitlist({ congrats, setCongrats }: { congrats: boolean, setCongrats: (
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
+  const [email, setEmail] = useState("");
+
+  const dispatch = useDispatch();
+
+  const collectMail = async (e: any) => {
+    e.preventDefault();
+    try {
+      if (!email) return;
+
+      if ((/^[a-zA-Z0-9._%±]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/).test(email)) {
+        const res = await axios.get(`https://script.google.com/macros/s/AKfycbxF1wcL6GXVJanGmsElMO9zABwL2MzM0nAHPxvyAwjBTVEjKRl4sNM0nRx57H2ODrXNPw/exec?email=${email}`);
+        console.log(res);
+
+        setCongrats(!congrats);
+      } else {
+        dispatch(setAlert({ message: "Enter valid email", type: 'success' }));
+      }
+
+    } catch (e: any) {
+      dispatch(setAlert("Failed to record"));
+    } finally {
+      setTimeout(() => dispatch(setAlert({ message: "", type: '' })), 1000);
+      setEmail('')
+    }
+  };
+
   return (
     <>
       <div className="lg:p-[160px_80px_200px_80px] waitlist-hero xs:p-[160px_40px_120px_40px] p-[160px_25px_120px_25px] flex justify-center items-center">
@@ -71,6 +100,8 @@ function Waitlist({ congrats, setCongrats }: { congrats: boolean, setCongrats: (
                 <div className=" h-[41px] w-full pl-3 pr-2.5 py-[8.50px] bg-[#9f9f9f]/0 rounded border border-black/50 justify-start items-center inline-flex">
                   <input
                     type="email"
+                    value={email}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                     className="text-black/60 border-none outline-none text-base font-normal font-ibm leading-snug w-full"
                     placeholder="Email"
                   />
@@ -80,7 +111,7 @@ function Waitlist({ congrats, setCongrats }: { congrats: boolean, setCongrats: (
                 </div>
               </div>
             </div>
-            <button onClick={(e) => { setCongrats(!congrats) ; e.preventDefault();} } className="h-[41px] btn btn1 px-4 py-[15px] text-center text-base font-medium font-ibm leading-[17.60px] rounded flex-col justify-center items-center inline-flex">
+            <button onClick={collectMail} className="h-[41px] btn btn1 px-4 py-[15px] text-center text-base font-medium font-ibm leading-[17.60px] rounded flex-col justify-center items-center inline-flex">
               Get Started
             </button>
           </form>

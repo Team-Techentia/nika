@@ -45,14 +45,14 @@ function App() {
   return (
     <>
       {congrats && <Congratulation setCongrats={setCongrats} />}
-
+      
       {alert.message && <Alert />}
 
       <div className={`${congrats && "h-screen overflow-auto"}`}>
 
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<><Navbar /><Home  /><Footer /> </>} />
+            <Route path="/" element={<><Navbar /><Home congrats={congrats} setCongrats={setCongrats} /><Footer /> </>} />
             <Route path="/about" element={<><Navbar /><About /><Footer /> </>} />
             <Route path="/blog" element={<><Navbar /><Blog blogs={blogs} tags={tags} /><Footer /> </>} />
             <Route path="/blog/:id" element={<><Navbar /><ArticlePage /><Footer /> </>} />

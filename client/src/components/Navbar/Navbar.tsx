@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <>
       {navOpen && (
-        <div className="top-0 mob-nav min-h-screen z-[1001] w-full" onClick={() => dispatcher(setNavOpen(!navOpen))}>
+        <div className="top-0 mob-nav min-h-screen z-50 w-full" onClick={() => dispatcher(setNavOpen(!navOpen))}>
           <div className="w-[320px] mob-nav-ani p-4 min-h-screen max-w-full bg-white flex flex-col " onClick={(e) => e.stopPropagation()}>
             <div className="flex justify-between pb-4 border-b border-b-[rgba(0,0,0,.5)]">
               <div className="logo flex justify-center items-center">
@@ -64,7 +64,7 @@ function Navbar() {
           </div>
         </div>
       )}
-      <div className="navbar max-w-[100%] flex justify-center lg:p-[12px_80px] sticky top-0 bg-white z-[1000]">
+      <div className="navbar max-w-[100%] flex justify-center lg:p-[12px_80px] sticky top-0 bg-white z-50">
         <div className="flex items-center justify-between w-[1280px] max-w-[100%] lg:h-12 xs:h-[75px] lg:px-0 px-4 xs:px-10 h-[60px]">
           <Link to="/">
             <div className="logo flex justify-center items-center">

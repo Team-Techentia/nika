@@ -2,8 +2,39 @@
 
 import { Link } from "react-router-dom";
 import { logo, youtube } from "../../assets";
+import { ChangeEvent, useState } from "react";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { setAlert } from "../../store/UISlice";
 
 function Footer() {
+
+  const [email, setEmail] = useState("");
+
+  const dispatch = useDispatch();
+
+  const collectMail = async (e: any) => {
+    e.preventDefault();
+    try {
+      if (!email) return;
+
+      if ((/^[a-zA-Z0-9._%±]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/).test(email)) {
+        const res = await axios.get(`https://script.google.com/macros/s/AKfycbxF1wcL6GXVJanGmsElMO9zABwL2MzM0nAHPxvyAwjBTVEjKRl4sNM0nRx57H2ODrXNPw/exec?email=${email}`);
+        console.log(res);
+
+        dispatch(setAlert({ message: "Email subscribed sucessfully", type: 'success' }));
+      } else {
+        dispatch(setAlert({ message: "Enter valid email", type: 'success' }));
+      }
+
+    } catch (e: any) {
+      dispatch(setAlert("Failed to record"));
+    } finally {
+      setTimeout(() => dispatch(setAlert({ message: "", type: '' })), 1000);
+      setEmail('')
+    }
+  };
+
   return (
     <>
       <div className="lg:p-[40px_80px] xs:p-[24px_40px] p-[24px_16px] lg:pb-0 xs:pb-0 pb-0 w-full flex justify-center bg-[#070707]">
@@ -28,10 +59,12 @@ function Footer() {
               <form method="POST" className="">
                 <div className="flex lg:flex-row flex-col gap-1.5">
                   <input
+                  value={email}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                     className="h-[38px] w-[100%] pl-3 py-3 text-base font-normal font-['Inter'] leading-tight bg-white/20 rounded-md justify-start items-center gap-2.5 inline-flex text-[rgba(255,255,255,.72)]"
                     placeholder="Email address"
                   />
-                  <button className="h-9 lg:w-[156px] btn btn4 w-[100%] px-4 py-3 text-base font-medium font-['Inter'] leading-tight rounded-md shadow justify-center items-center gap-2.5 inline-flex">
+                  <button onClick={collectMail} className="h-9 lg:w-[156px] btn btn4 w-[100%] px-4 py-3 text-base font-medium font-['Inter'] leading-tight rounded-md shadow justify-center items-center gap-2.5 inline-flex">
                     Try it out
                   </button>
                 </div>

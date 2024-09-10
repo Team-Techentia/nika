@@ -1,14 +1,43 @@
 import { award, book, ci1, ci2, ci3, ci4, circlelottie, cloud, code, coin, her1, her2, her3, her4, light, mail, shield, shield2, } from "../assets";
 import Lottie from "lottie-react";
 import { Signup } from "../components";
-import { useEffect } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { setAlert } from "../store/UISlice";
+import axios from "axios";
 
-function Home() {
+function Home({ congrats, setCongrats }: { congrats: boolean, setCongrats: (x: boolean) => void }) {
 
   useEffect(() => {
     // window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  const [email, setEmail] = useState("");
+
+  const dispatch = useDispatch();
+
+  const collectMail = async (e: any) => {
+    e.preventDefault();
+    try {
+      if (!email) return;
+
+      if ((/^[a-zA-Z0-9._%±]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/).test(email)) {
+        const res = await axios.get(`https://script.google.com/macros/s/AKfycbxF1wcL6GXVJanGmsElMO9zABwL2MzM0nAHPxvyAwjBTVEjKRl4sNM0nRx57H2ODrXNPw/exec?email=${email}`);
+        console.log(res);
+
+        setCongrats(!congrats);
+      } else {
+        dispatch(setAlert({ message: "Enter valid email", type: 'success' }));
+      }
+
+    } catch (e: any) {
+      dispatch(setAlert("Failed to record"));
+    } finally {
+      setTimeout(() => dispatch(setAlert({ message: "", type: '' })), 1000);
+      setEmail('')
+    }
+  };
 
   return (
     <>
@@ -29,13 +58,13 @@ function Home() {
             </div>
             <div className="">
               <div className="min-h-12 justify-center items-center flex-wrap gap-[18px] inline-flex">
-                  {/* <button className="w-32 h-12 px-4 py-[18px] text-center text-base font-bold font-inter leading-normal btn btn1 rounded-lg justify-center items-center gap-2.5 flex"  >
+                {/* <button className="w-32 h-12 px-4 py-[18px] text-center text-base font-bold font-inter leading-normal btn btn1 rounded-lg justify-center items-center gap-2.5 flex"  >
                   Get Started
                   </button> */}
-               <Link to="/waitlist">
-                <button className="w-[159px] h-12 px-4 py-[18px] rounded-lg border btn btn2 justify-center items-center gap-2.5 flex text-center text-base font-bold font-inter leading-normal"  >
-                  Join the Waitlist
-                </button>
+                <Link to="/waitlist">
+                  <button className="w-[159px] h-12 px-4 py-[18px] rounded-lg border btn btn2 justify-center items-center gap-2.5 flex text-center text-base font-bold font-inter leading-normal"  >
+                    Join the Waitlist
+                  </button>
                 </Link>
               </div>
             </div>
@@ -169,7 +198,7 @@ function Home() {
 
                 <div className="flex sm:w-[50%] justify-center items-center py-10">
                   <div className="sm:w-[262px] md:w-[322px] xl:w-[532px] xl:h-[355px] sm:h-[282px] w-[288px] h-[260px]">
-                  <Lottie animationData={ci4} loop={true} />
+                    <Lottie animationData={ci4} loop={true} />
                   </div>
                 </div>
               </div>
@@ -228,13 +257,15 @@ function Home() {
               Stay Informed
             </div>
             <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter pt-2">
-            Sign up and stay ahead of the curve with early access and exclusive insights.
+              Sign up and stay ahead of the curve with early access and exclusive insights.
             </p>
           </div>
           <div className="lg:w-[50%] w-[100%] bg-white xs:p-5 p-4 gap-3 rounded-[8px] border-[1px] border-[rgba(255,255,255,0.20)] flex flex-col xs:gap-5">
             <div className="h-[34px] pl-3 pr-[7px] py-[5px] rounded border border-[#070707]/60 justify-start items-center inline-flex">
               <input
                 type="email"
+                value={email}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                 placeholder="Email"
                 className="border-none outline-none w-[100%] text-[#070707]/70 text-sm font-normal font-ibm leading-tight"
               />
@@ -242,11 +273,9 @@ function Home() {
                 <img src={mail} alt="Mail" />
               </div>
             </div>
-            <Link to="/waitlist">
-            <button className="h-[34px] btn btn1 p- text-center text-sm font-medium font-ibm leading-none rounded flex-col justify-center items-center inline-flex">
-              Get Started
+            <button onClick={collectMail} className="w-full h-[34px] btn btn1 p- text-center text-sm font-medium font-ibm leading-none rounded flex-col justify-center items-center inline-flex">
+              Subscribe
             </button>
-            </Link>
           </div>
         </div>
       </form>
@@ -269,7 +298,7 @@ function Home() {
                       Institutional Grade Security
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                    Third-party custodians, audited products, and insurance options ensure the safety of your assets.
+                      Third-party custodians, audited products, and insurance options ensure the safety of your assets.
                     </p>
                   </div>
                 </div>
@@ -282,7 +311,7 @@ function Home() {
                       Investor Centric Approach
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                    Expertly curated products designed to optimize risk-adjusted returns, tailored to meet your investment goals.                    </p>
+                      Expertly curated products designed to optimize risk-adjusted returns, tailored to meet your investment goals.                    </p>
                   </div>
                 </div>
                 <div className="sm:p-6 p-4 flex items-start gap-4 flex-col rounded-[12px] bg-[#F6F6FD]">
@@ -294,7 +323,7 @@ function Home() {
                       Easily Accessible
                     </div>
                     <p className="sm:text-[16px] text-[14px] leading-6 tracking-[-0.08px] font-[400] text-[rgba(7,7,7,0.56)] font-inter">
-                    Invest in diverse products without capital constraints, enabling you to diversify your investments freely.                    </p>
+                      Invest in diverse products without capital constraints, enabling you to diversify your investments freely.                    </p>
                   </div>
                 </div>
               </div>

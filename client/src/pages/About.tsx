@@ -69,7 +69,7 @@ function About() {
               <div className="lg:w-[50%] lg:h-[inherit] flex justify-center items-center">
                 <Lottie
                   animationData={ci1}
-                  className="xs:w-[394px] h-[390px] max-w-[100%]"
+                  className="xs:w-[464px] h-[490px] max-w-[100%]"
                   alt="Circle Lottie"
                 />
               </div>
